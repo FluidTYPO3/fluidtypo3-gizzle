@@ -4,9 +4,87 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c103fb59ea40e2f2e60c344c14839521",
+    "hash": "b2df5fed63ed9c435b375890d6f47516",
     "packages": [
-
+        {
+            "name": "namelesscoder/gizzle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NamelessCoder/gizzle.git",
+                "reference": "1b2a1fd9c112b827b4b4bbaf4aa30e2c39a36b7a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/1b2a1fd9c112b827b4b4bbaf4aa30e2c39a36b7a",
+                "reference": "1b2a1fd9c112b827b4b4bbaf4aa30e2c39a36b7a",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NamelessCoder\\Gizzle\\Tests\\Fixtures\\": "tests/fixtures/NamelessCoder/Gizzle/",
+                    "NamelessCoder\\Gizzle\\Tests\\Unit\\": "tests/unit/NamelessCoder/Gizzle/",
+                    "NamelessCoder\\Gizzle\\": "src/NamelessCoder/Gizzle/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv3"
+            ],
+            "authors": [
+                {
+                    "name": "Claus Due",
+                    "email": "claus@namelesscoder.net"
+                }
+            ],
+            "description": "GitHub Webhook Listener with plugin-based API for creating your own triggerered actions",
+            "time": "2014-09-20 21:04:38"
+        },
+        {
+            "name": "namelesscoder/gizzle-typo3-plugins",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NamelessCoder/gizzle-typo3-plugins.git",
+                "reference": "eef5dcdf7124e17994da812c092d29386380ea4e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/eef5dcdf7124e17994da812c092d29386380ea4e",
+                "reference": "eef5dcdf7124e17994da812c092d29386380ea4e",
+                "shasum": ""
+            },
+            "require": {
+                "namelesscoder/gizzle": "dev-master"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NamelessCoder\\GizzleTYPO3Plugins\\Tests\\Fixtures\\": "tests/fixtures/NamelessCoder/GizzleTYPO3Plugins/",
+                    "NamelessCoder\\GizzleTYPO3Plugins\\Tests\\Unit\\": "tests/unit/NamelessCoder/GizzleTYPO3Plugins/",
+                    "NamelessCoder\\GizzleTYPO3Plugins\\": "src/NamelessCoder/GizzleTYPO3Plugins/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv3"
+            ],
+            "authors": [
+                {
+                    "name": "Claus Due",
+                    "email": "claus@namelesscoder.net"
+                }
+            ],
+            "description": "Gizzle plugins for running various tasks on repositories which contain TYPO3 extensions",
+            "time": "2014-09-20 21:56:35"
+        }
     ],
     "packages-dev": [
         {
@@ -656,6 +734,133 @@
             "time": "2014-03-07 15:35:33"
         },
         {
+            "name": "simplyadmire/composer-plugins",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/SimplyAdmire/ComposerPlugins.git",
+                "reference": "64e60c5112be05214f6b4f97165ee0590e54f0b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/SimplyAdmire/ComposerPlugins/zipball/64e60c5112be05214f6b4f97165ee0590e54f0b0",
+                "reference": "64e60c5112be05214f6b4f97165ee0590e54f0b0",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "1.0.0",
+                "squizlabs/php_codesniffer": "*"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": [
+                    "SimplyAdmire\\ComposerPlugins\\PhpCodesnifferStandardInstallerPlugin"
+                ]
+            },
+            "autoload": {
+                "psr-0": {
+                    "SimplyAdmire\\ComposerPlugins": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Rens Admiraal",
+                    "email": "rens@simplyadmire.com",
+                    "role": "lead"
+                }
+            ],
+            "description": "Composer plugin for installing PHP_CodeSniffer standards",
+            "keywords": [
+                "PHP_CodeSniffer",
+                "TYPO3 CMS",
+                "TYPO3 Flow",
+                "TYPO3 Neos",
+                "phpcs",
+                "standards",
+                "typo3"
+            ],
+            "time": "2014-08-06 00:34:55"
+        },
+        {
+            "name": "squizlabs/php_codesniffer",
+            "version": "1.5.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
+                "reference": "4097e2c106e4a32bc234ae880e5585a19137e435"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/4097e2c106e4a32bc234ae880e5585a19137e435",
+                "reference": "4097e2c106e4a32bc234ae880e5585a19137e435",
+                "shasum": ""
+            },
+            "require": {
+                "ext-tokenizer": "*",
+                "php": ">=5.1.2"
+            },
+            "suggest": {
+                "phpunit/php-timer": "dev-master"
+            },
+            "bin": [
+                "scripts/phpcs"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-phpcs-fixer": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "classmap": [
+                    "CodeSniffer.php",
+                    "CodeSniffer/CLI.php",
+                    "CodeSniffer/Exception.php",
+                    "CodeSniffer/File.php",
+                    "CodeSniffer/Report.php",
+                    "CodeSniffer/Reporting.php",
+                    "CodeSniffer/Sniff.php",
+                    "CodeSniffer/Tokens.php",
+                    "CodeSniffer/Reports/",
+                    "CodeSniffer/CommentParser/",
+                    "CodeSniffer/Tokenizers/",
+                    "CodeSniffer/DocGenerators/",
+                    "CodeSniffer/Standards/AbstractPatternSniff.php",
+                    "CodeSniffer/Standards/AbstractScopeSniff.php",
+                    "CodeSniffer/Standards/AbstractVariableSniff.php",
+                    "CodeSniffer/Standards/IncorrectPatternException.php",
+                    "CodeSniffer/Standards/Generic/Sniffs/",
+                    "CodeSniffer/Standards/MySource/Sniffs/",
+                    "CodeSniffer/Standards/PEAR/Sniffs/",
+                    "CodeSniffer/Standards/PSR1/Sniffs/",
+                    "CodeSniffer/Standards/PSR2/Sniffs/",
+                    "CodeSniffer/Standards/Squiz/Sniffs/",
+                    "CodeSniffer/Standards/Zend/Sniffs/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Greg Sherwood",
+                    "role": "lead"
+                }
+            ],
+            "description": "PHP_CodeSniffer tokenises PHP, JavaScript and CSS files and detects violations of a defined set of coding standards.",
+            "homepage": "http://www.squizlabs.com/php-codesniffer",
+            "keywords": [
+                "phpcs",
+                "standards"
+            ],
+            "time": "2014-08-05 23:54:05"
+        },
+        {
             "name": "symfony/yaml",
             "version": "dev-master",
             "target-dir": "Symfony/Component/Yaml",
@@ -701,15 +906,252 @@
             "description": "Symfony Yaml Component",
             "homepage": "http://symfony.com",
             "time": "2014-09-17 09:54:14"
+        },
+        {
+            "name": "typo3-ci/typo3cms",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/typo3-ci/TYPO3CMS.git",
+                "reference": "f5fdb1caadff451a329fc3fc4ccc7e57a2235009"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/typo3-ci/TYPO3CMS/zipball/f5fdb1caadff451a329fc3fc4ccc7e57a2235009",
+                "reference": "f5fdb1caadff451a329fc3fc4ccc7e57a2235009",
+                "shasum": ""
+            },
+            "require": {
+                "typo3-ci/typo3sniffpool": ">=1.0.0"
+            },
+            "require-dev": {
+                "simplyadmire/composer-plugins": "*",
+                "typo3-ci/typo3sniffpool": "dev-develop"
+            },
+            "suggest": {
+                "typo3-ci/typo3flow": ">=0.0.3"
+            },
+            "type": "phpcodesniffer-standard",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Stefano Kowalke",
+                    "email": "blueduck@gmx.net",
+                    "role": "lead"
+                },
+                {
+                    "name": "Andy Grunwald",
+                    "email": "andygrunwald@gmail.com",
+                    "role": "lead"
+                }
+            ],
+            "description": "This package contains a selection of sniffs which implements the Coding Guidelines for TYPO3CMS which was former known as TYPO3.",
+            "homepage": "https://github.com/typo3-ci/TYPO3CMS",
+            "keywords": [
+                "cms",
+                "codesniffer",
+                "coding guidelines",
+                "phpcs",
+                "quality assurance",
+                "standards",
+                "typo3"
+            ],
+            "time": "2014-09-13 20:28:09"
+        },
+        {
+            "name": "typo3-ci/typo3sniffpool",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/typo3-ci/TYPO3SniffPool.git",
+                "reference": "78ff6470872892b43ff8e5d7253c5a241c2ca192"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/typo3-ci/TYPO3SniffPool/zipball/78ff6470872892b43ff8e5d7253c5a241c2ca192",
+                "reference": "78ff6470872892b43ff8e5d7253c5a241c2ca192",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.1",
+                "simplyadmire/composer-plugins": "*",
+                "squizlabs/php_codesniffer": "1.*"
+            },
+            "replace": {
+                "typo3/codesniffer": "*"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.1.*"
+            },
+            "suggest": {
+                "typo3-ci/typo3cms": "*",
+                "typo3-ci/typo3flow": "*"
+            },
+            "type": "phpcodesniffer-standard",
+            "autoload": {
+                "classmap": [
+                    "Sniffs/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Stefano Kowalke",
+                    "email": "blueduck@gmx.net",
+                    "role": "lead"
+                },
+                {
+                    "name": "Andy Grunwald",
+                    "email": "andygrunwald@gmail.com",
+                    "role": "lead"
+                }
+            ],
+            "description": "This repository contains custom sniffs which are compatible with the PHP_CodeSniffer. Understand this package as a sniff pool. It contains all custom sniffs for the TYPO3 project.",
+            "homepage": "http://forge.typo3.org/projects/show/team-php_codesniffer",
+            "keywords": [
+                "codesniffer",
+                "coding guidelines",
+                "phpcs",
+                "quality assurance",
+                "standards",
+                "typo3"
+            ],
+            "time": "2014-09-03 20:09:28"
+        },
+        {
+            "name": "typo3/cms",
+            "version": "dev-TYPO3_6-2",
+            "source": {
+                "type": "git",
+                "url": "git://git.typo3.org/Packages/TYPO3.CMS.git",
+                "reference": "80aabffe1bea30cc69e26125ba3aec7dc26e88d3"
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "ext-pcre": "*",
+                "ext-session": "*",
+                "ext-xml": "*",
+                "php": ">=5.3.7",
+                "typo3/cms-composer-installers": "1.1.*@dev"
+            },
+            "replace": {
+                "typo3/cms-about": "self.version",
+                "typo3/cms-aboutmodules": "self.version",
+                "typo3/cms-adodb": "self.version",
+                "typo3/cms-backend": "self.version",
+                "typo3/cms-belog": "self.version",
+                "typo3/cms-beuser": "self.version",
+                "typo3/cms-cms": "self.version",
+                "typo3/cms-context-help": "self.version",
+                "typo3/cms-core": "self.version",
+                "typo3/cms-cshmanual": "self.version",
+                "typo3/cms-css-styled-content": "self.version",
+                "typo3/cms-dbal": "self.version",
+                "typo3/cms-documentation": "self.version",
+                "typo3/cms-extbase": "self.version",
+                "typo3/cms-extensionmanager": "self.version",
+                "typo3/cms-extra-page-cm-options": "self.version",
+                "typo3/cms-feedit": "self.version",
+                "typo3/cms-felogin": "self.version",
+                "typo3/cms-filelist": "self.version",
+                "typo3/cms-filemetadata": "self.version",
+                "typo3/cms-fluid": "self.version",
+                "typo3/cms-form": "self.version",
+                "typo3/cms-frontend": "self.version",
+                "typo3/cms-func": "self.version",
+                "typo3/cms-func-wizards": "self.version",
+                "typo3/cms-impexp": "self.version",
+                "typo3/cms-indexed-search": "self.version",
+                "typo3/cms-indexed-search-mysql": "self.version",
+                "typo3/cms-info": "self.version",
+                "typo3/cms-info-pagetsconfig": "self.version",
+                "typo3/cms-install": "self.version",
+                "typo3/cms-lang": "self.version",
+                "typo3/cms-linkvalidator": "self.version",
+                "typo3/cms-lowlevel": "self.version",
+                "typo3/cms-opendocs": "self.version",
+                "typo3/cms-openid": "self.version",
+                "typo3/cms-perm": "self.version",
+                "typo3/cms-recordlist": "self.version",
+                "typo3/cms-recycler": "self.version",
+                "typo3/cms-reports": "self.version",
+                "typo3/cms-rsaauth": "self.version",
+                "typo3/cms-rtehtmlarea": "self.version",
+                "typo3/cms-saltedpasswords": "self.version",
+                "typo3/cms-scheduler": "self.version",
+                "typo3/cms-setup": "self.version",
+                "typo3/cms-sv": "self.version",
+                "typo3/cms-sys-action": "self.version",
+                "typo3/cms-sys-note": "self.version",
+                "typo3/cms-t3editor": "self.version",
+                "typo3/cms-t3skin": "self.version",
+                "typo3/cms-taskcenter": "self.version",
+                "typo3/cms-tstemplate": "self.version",
+                "typo3/cms-version": "self.version",
+                "typo3/cms-viewpage": "self.version",
+                "typo3/cms-wizard-crpages": "self.version",
+                "typo3/cms-wizard-sortpages": "self.version",
+                "typo3/cms-workspaces": "self.version"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "1.3.*@dev",
+                "phpunit/phpunit": "~4.1.0"
+            },
+            "suggest": {
+                "ext-gd": "GDlib/Freetype is required for building images with text (GIFBUILDER) and can also be used to scale images",
+                "ext-openssl": "",
+                "ext-soap": "",
+                "ext-zip": "",
+                "ext-zlib": "TYPO3 uses zlib for amongst others output compression and un/packing t3x extension files"
+            },
+            "type": "typo3-cms-core",
+            "extra": {
+                "branch-alias": {
+                    "dev-TYPO3_6-2": "6.2.x-dev"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "TYPO3 CMS Core Team",
+                    "homepage": "http://forge.typo3.org/projects/typo3cms-core",
+                    "role": "Developer"
+                },
+                {
+                    "name": "The TYPO3 Community",
+                    "homepage": "https://typo3.org/community/",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "TYPO3 CMS is a free open source Content Management Framework initially created by Kasper Skaarhoj and licensed under GNU/GPL.",
+            "homepage": "http://typo3.org/",
+            "keywords": [
+                "Content management system",
+                "cms",
+                "extbase",
+                "typo3"
+            ],
+            "time": "2014-09-20 22:22:03"
         }
     ],
     "aliases": [
 
     ],
     "minimum-stability": "dev",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "namelesscoder/gizzle": 20,
+        "namelesscoder/gizzle-typo3-plugins": 20,
+        "typo3-ci/typo3cms": 20
+    },
     "prefer-stable": false,
     "platform": [
 

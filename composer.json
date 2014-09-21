@@ -2,6 +2,8 @@
     "name": "fluidtypo3/fluidtypo3-gizzle",
     "description": "Gizzle plugins for running various tasks for the FluidTYPO3 repositories",
     "license": "GPLv3",
+	"version": "0.1.0",
+    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Claus Due",
@@ -13,14 +15,21 @@
 			"FluidTYPO3\\FluidTYPO3Gizzle\\Tests\\Fixtures\\": "tests/fixtures/FluidTYPO3/FluidTYPO3Gizzle/",
 			"FluidTYPO3\\FluidTYPO3Gizzle\\Tests\\Unit\\": "tests/unit/FluidTYPO3/FluidTYPO3Gizzle/",
 			"FluidTYPO3\\FluidTYPO3Gizzle\\": "src/FluidTYPO3/FluidTYPO3Gizzle/"
-		}
+		},
+		"classmap": [
+			"vendor/typo3/cms/typo3/sysext"
+		]
 	},
-    "minimum-stability": "dev",
+	"replace": {
+		"typo3/cms-composer-installers": "*"
+	},
 	"require": {
 		"namelesscoder/gizzle": "dev-master",
 		"namelesscoder/gizzle-typo3-plugins": "dev-master"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "4.1.*"
+		"phpunit/phpunit": "4.1.*",
+		"typo3-ci/typo3cms": "dev-master",
+		"typo3/cms": "~6.2.4"
 	}
 }
