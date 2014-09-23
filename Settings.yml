@@ -1,0 +1,10 @@
+FluidTYPO3\\FluidTYPO3Gizzle:
+  FluidTYPO3\\FluidTYPO3Gizzle\\GizzlePlugins\\StagingSiteDeployPlugin:
+    monitored:
+      - flux
+      - fluidpages
+      - fluidcontent
+      - vhs
+    directory: typo3conf/ext/%s
+    branch: staging
+    truncate: typo3temp/*

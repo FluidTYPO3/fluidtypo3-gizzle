@@ -25,6 +25,7 @@
 	},
 	"require": {
 		"namelesscoder/gizzle": "dev-master",
+		"namelesscoder/gizzle-git-plugins": "dev-master",
 		"namelesscoder/gizzle-typo3-plugins": "dev-master"
 	},
 	"require-dev": {

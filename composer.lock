@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "b2df5fed63ed9c435b375890d6f47516",
+    "hash": "b18386f9d9c88e71079d81ac519ed16a",
     "packages": [
         {
             "name": "namelesscoder/gizzle",
@@ -12,13 +12,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle.git",
-                "reference": "1b2a1fd9c112b827b4b4bbaf4aa30e2c39a36b7a"
+                "reference": "60268f39c6b90ee5d84b4ba2969f58097da13e54"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/1b2a1fd9c112b827b4b4bbaf4aa30e2c39a36b7a",
-                "reference": "1b2a1fd9c112b827b4b4bbaf4aa30e2c39a36b7a",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/60268f39c6b90ee5d84b4ba2969f58097da13e54",
+                "reference": "60268f39c6b90ee5d84b4ba2969f58097da13e54",
                 "shasum": ""
+            },
+            "require": {
+                "symfony/yaml": "~2.5.3"
             },
             "require-dev": {
                 "phpunit/phpunit": "4.1.*"
@@ -42,7 +45,48 @@
                 }
             ],
             "description": "GitHub Webhook Listener with plugin-based API for creating your own triggerered actions",
-            "time": "2014-09-20 21:04:38"
+            "time": "2014-09-23 18:57:42"
+        },
+        {
+            "name": "namelesscoder/gizzle-git-plugins",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NamelessCoder/gizzle-git-plugins.git",
+                "reference": "299573b36f06077dad295915d835e2ec8338c759"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/299573b36f06077dad295915d835e2ec8338c759",
+                "reference": "299573b36f06077dad295915d835e2ec8338c759",
+                "shasum": ""
+            },
+            "require": {
+                "namelesscoder/gizzle": "dev-master"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NamelessCoder\\GizzleGitPlugins\\Tests\\Fixtures\\": "tests/fixtures/NamelessCoder/GizzleGitPlugins/",
+                    "NamelessCoder\\GizzleGitPlugins\\Tests\\Unit\\": "tests/unit/NamelessCoder/GizzleGitPlugins/",
+                    "NamelessCoder\\GizzleGitPlugins\\": "src/NamelessCoder/GizzleGitPlugins/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv3"
+            ],
+            "authors": [
+                {
+                    "name": "Claus Due",
+                    "email": "claus@namelesscoder.net"
+                }
+            ],
+            "description": "Gizzle plugins for running Git operations",
+            "time": "2014-09-21 22:19:19"
         },
         {
             "name": "namelesscoder/gizzle-typo3-plugins",
@@ -50,12 +94,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle-typo3-plugins.git",
-                "reference": "eef5dcdf7124e17994da812c092d29386380ea4e"
+                "reference": "7f560f0b5a00423f0ab9725ad40a44bbfb4a2fd9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/eef5dcdf7124e17994da812c092d29386380ea4e",
-                "reference": "eef5dcdf7124e17994da812c092d29386380ea4e",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/7f560f0b5a00423f0ab9725ad40a44bbfb4a2fd9",
+                "reference": "7f560f0b5a00423f0ab9725ad40a44bbfb4a2fd9",
                 "shasum": ""
             },
             "require": {
@@ -83,7 +127,54 @@
                 }
             ],
             "description": "Gizzle plugins for running various tasks on repositories which contain TYPO3 extensions",
-            "time": "2014-09-20 21:56:35"
+            "time": "2014-09-21 14:35:37"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "2.5.x-dev",
+            "target-dir": "Symfony/Component/Yaml",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Yaml.git",
+                "reference": "b1dbc53593b98c2d694ebf383660ac9134d30b96"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/b1dbc53593b98c2d694ebf383660ac9134d30b96",
+                "reference": "b1dbc53593b98c2d694ebf383660ac9134d30b96",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.5-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-09-22 09:14:18"
         }
     ],
     "packages-dev": [
@@ -861,64 +952,17 @@
             "time": "2014-08-05 23:54:05"
         },
         {
-            "name": "symfony/yaml",
-            "version": "dev-master",
-            "target-dir": "Symfony/Component/Yaml",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/Yaml.git",
-                "reference": "9f94dc5d8d7b49a9cb789853278af2b07a0aa4fd"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/9f94dc5d8d7b49a9cb789853278af2b07a0aa4fd",
-                "reference": "9f94dc5d8d7b49a9cb789853278af2b07a0aa4fd",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.6-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\Yaml\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                }
-            ],
-            "description": "Symfony Yaml Component",
-            "homepage": "http://symfony.com",
-            "time": "2014-09-17 09:54:14"
-        },
-        {
             "name": "typo3-ci/typo3cms",
             "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/typo3-ci/TYPO3CMS.git",
-                "reference": "f5fdb1caadff451a329fc3fc4ccc7e57a2235009"
+                "reference": "53186aee24c381033ede19fe8e75b0d8bbb48f62"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/typo3-ci/TYPO3CMS/zipball/f5fdb1caadff451a329fc3fc4ccc7e57a2235009",
-                "reference": "f5fdb1caadff451a329fc3fc4ccc7e57a2235009",
+                "url": "https://api.github.com/repos/typo3-ci/TYPO3CMS/zipball/53186aee24c381033ede19fe8e75b0d8bbb48f62",
+                "reference": "53186aee24c381033ede19fe8e75b0d8bbb48f62",
                 "shasum": ""
             },
             "require": {
@@ -959,7 +1003,7 @@
                 "standards",
                 "typo3"
             ],
-            "time": "2014-09-13 20:28:09"
+            "time": "2014-09-16 16:58:59"
         },
         {
             "name": "typo3-ci/typo3sniffpool",
@@ -1030,7 +1074,7 @@
             "source": {
                 "type": "git",
                 "url": "git://git.typo3.org/Packages/TYPO3.CMS.git",
-                "reference": "80aabffe1bea30cc69e26125ba3aec7dc26e88d3"
+                "reference": "d652601f7f23a21ae77aa4bda81eaf75fda5a4f6"
             },
             "require": {
                 "ext-fileinfo": "*",
@@ -1140,7 +1184,7 @@
                 "extbase",
                 "typo3"
             ],
-            "time": "2014-09-20 22:22:03"
+            "time": "2014-09-23 16:12:02"
         }
     ],
     "aliases": [
@@ -1149,6 +1193,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "namelesscoder/gizzle": 20,
+        "namelesscoder/gizzle-git-plugins": 20,
         "namelesscoder/gizzle-typo3-plugins": 20,
         "typo3-ci/typo3cms": 20
     },
