@@ -53,14 +53,27 @@ class SiteDeployPlugin implements PluginInterface {
 	 * @return void
 	 */
 	public function process(Payload $payload) {
+		$repositoryRelativePath = sprintf($this->settings[self::OPTION_DIRECTORY], $payload->getRepository()->getName());
+		$repositoryBasePath = $this->getSettingValue(self::OPTION_DOCUMENTROOT, '/');
+		$repositoryLocalPath = $repositoryBasePath . $repositoryRelativePath;
+		$branchName = TRUE === isset($this->settings[self::OPTION_BRANCH]) ? $this->settings[self::OPTION_BRANCH] : $payload->getRepository()->getMasterBranch();
 		// 1) use a Git PullPlugin to pull this repository
 		$pull = new PullPlugin();
 		$pull->initialize(array(
-			PullPlugin::OPTION_BRANCH => 'staging',
-			PullPlugin::OPTION_DIRECTORY => sprintf($this->settings[self::OPTION_DIRECTORY], $payload->getRepository()->getName()),
+			PullPlugin::OPTION_BRANCH => $branchName,
+			PullPlugin::OPTION_DIRECTORY => $repositoryLocalPath,
 			PullPlugin::OPTION_DEPTH => 1
 		));
 		$pull->process($payload);
+	}
+
+	/**
+	 * @param string $name
+	 * @param mixed $defaultValue
+	 * @return mixed
+	 */
+	protected function getSettingValue($name, $defaultValue = NULL) {
+		return TRUE === isset($this->settings[$name]) ? $this->settings[$name] : $defaultValue;
 	}
 
 }
