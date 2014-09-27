@@ -1,0 +1,22 @@
+FluidTYPO3\FluidTYPO3Gizzle:
+
+  # Production Site Deployment
+  # Plugin to monitor repository our official site-rendering plugins:
+  # the Provider Extension, Fluidshare and Schemaker which make up the
+  # official site design and renders examples and documentation. When
+  # either of these repositories receive updates to their master branches,
+  # they as well as all repositories in list "repositories" are pulled.
+  FluidTYPO3\FluidTYPO3Gizzle\GizzlePlugins\SiteDeployPlugin:
+    monitored:
+      - fluidtypo3org
+      - fluidshare
+      - schemaker
+      - flux
+      - fluidpages
+      - fluidcontent
+      - vhs
+      - builder
+    directory: typo3conf/ext/%s
+    branch: staging
+    delete: typo3temp/*
+    truncate: cf_* cache_*

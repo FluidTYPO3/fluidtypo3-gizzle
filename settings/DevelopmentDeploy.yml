@@ -1,0 +1,21 @@
+FluidTYPO3\FluidTYPO3Gizzle:
+
+  # Development Site Deployment
+  # Plugin to monitor repositories for commits to the "development" branch,
+  # deploying (by git pull) when commits are detected to any of the
+  # monitored repositories.
+  FluidTYPO3\FluidTYPO3Gizzle\GizzlePlugins\SiteDeployPlugin:
+    monitored:
+      - flux
+      - fluidpages
+      - fluidcontent
+      - vhs
+      - fluidtypo3org
+      - builder
+      - schemaker
+      - fluidshare
+    documentRoot: /var/www/development.fluidtypo3.org
+    directory: typo3conf/ext/%s
+    branch: development
+    delete: typo3temp/*
+    truncate: cf_* cache_*

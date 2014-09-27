@@ -12,8 +12,10 @@ class SiteDeployPlugin implements PluginInterface {
 
 	const OPTION_MONITORED = 'monitored';
 	const OPTION_BRANCH = 'branch';
+	const OPTION_DOCUMENTROOT = 'documentRoot';
 	const OPTION_DIRECTORY = 'directory';
 	const OPTION_POST_TRUNCATE = 'truncate';
+	const OPTION_POST_DELETE = 'delete';
 
 	/**
 	 * @var array
@@ -40,7 +42,7 @@ class SiteDeployPlugin implements PluginInterface {
 	public function trigger(Payload $payload) {
 		$monitoredRepositoryUrls = (array) $this->settings[self::OPTION_MONITORED];
 		$isMonitored = TRUE === in_array($payload->getRepository()->getName(), $monitoredRepositoryUrls);
-		return $this->settings[self::OPTION_BRANCH] === $payload->getRef() && $isMonitored;
+		return ('refs/heads/' . $this->settings[self::OPTION_BRANCH] === $payload->getRef() && $isMonitored);
 	}
 
 	/**
