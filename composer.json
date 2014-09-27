@@ -15,10 +15,7 @@
 			"FluidTYPO3\\FluidTYPO3Gizzle\\Tests\\Fixtures\\": "tests/fixtures/FluidTYPO3/FluidTYPO3Gizzle/",
 			"FluidTYPO3\\FluidTYPO3Gizzle\\Tests\\Unit\\": "tests/unit/FluidTYPO3/FluidTYPO3Gizzle/",
 			"FluidTYPO3\\FluidTYPO3Gizzle\\": "src/FluidTYPO3/FluidTYPO3Gizzle/"
-		},
-		"classmap": [
-			"vendor/typo3/cms/typo3/sysext"
-		]
+		}
 	},
 	"replace": {
 		"typo3/cms-composer-installers": "*"
@@ -29,8 +26,6 @@
 		"namelesscoder/gizzle-typo3-plugins": "dev-master"
 	},
 	"require-dev": {
-		"phpunit/phpunit": "4.1.*",
-		"typo3-ci/typo3cms": "dev-master",
-		"typo3/cms": "~6.2.4"
+		"phpunit/phpunit": "4.1.*"
 	}
 }

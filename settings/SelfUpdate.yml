@@ -1,0 +1,4 @@
+NamelessCoder\\Gizzle:
+  NamelessCoder\\Gizzle\\GizzlePlugins\\SelfUpdatePlugin:
+    enabled: true
+    branch: master
