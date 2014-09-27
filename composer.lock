@@ -54,12 +54,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle-git-plugins.git",
-                "reference": "29c81d1770c25ed034d243a655dc250eea81aaa8"
+                "reference": "5cd24a05ae8bdcbf166c8aa2d918ef610d8e6a7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/29c81d1770c25ed034d243a655dc250eea81aaa8",
-                "reference": "29c81d1770c25ed034d243a655dc250eea81aaa8",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/5cd24a05ae8bdcbf166c8aa2d918ef610d8e6a7f",
+                "reference": "5cd24a05ae8bdcbf166c8aa2d918ef610d8e6a7f",
                 "shasum": ""
             },
             "require": {
@@ -87,7 +87,7 @@
                 }
             ],
             "description": "Gizzle plugins for running Git operations",
-            "time": "2014-09-25 16:07:52"
+            "time": "2014-09-27 23:48:00"
         },
         {
             "name": "namelesscoder/gizzle-typo3-plugins",
