@@ -72,6 +72,7 @@ class SiteDeployPlugin extends AbstractPlugin implements PluginInterface {
 	protected function getRepositoryPath(Payload $payload) {
 		$repositoryRelativePath = sprintf($this->getSettingValue(self::OPTION_DIRECTORY), $payload->getRepository()->getName());
 		$repositoryBasePath = $this->getSettingValue(self::OPTION_DOCUMENTROOT, '/');
+		$repositoryBasePath = sprintf($repositoryBasePath, substr($payload->getRef(), 11));
 		$repositoryLocalPath = $repositoryBasePath . $repositoryRelativePath;
 		return $repositoryLocalPath;
 	}

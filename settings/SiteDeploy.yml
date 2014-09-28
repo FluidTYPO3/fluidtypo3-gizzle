@@ -14,7 +14,7 @@ FluidTYPO3\FluidTYPO3Gizzle:
       - builder
       - schemaker
       - fluidshare
-    documentRoot: /var/www/development.fluidtypo3.org/
+    documentRoot: /var/www/%s.fluidtypo3.org/
     directory: typo3conf/ext/%s
     branch: development
     delete: typo3temp/*
