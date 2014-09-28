@@ -16,6 +16,7 @@ FluidTYPO3\FluidTYPO3Gizzle:
       - fluidcontent
       - vhs
       - builder
+    documentRoot: /var/www/fluidtypo3.org/
     directory: typo3conf/ext/%s
     branch: staging
     delete: typo3temp/*

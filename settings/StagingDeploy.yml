@@ -14,6 +14,7 @@ FluidTYPO3\FluidTYPO3Gizzle:
       - builder
       - schemaker
       - fluidshare
+    documentRoot: /var/www/staging.fluidtypo3.org/
     directory: typo3conf/ext/%s
     branch: staging
     delete: typo3temp/*
