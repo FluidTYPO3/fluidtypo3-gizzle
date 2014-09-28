@@ -17,9 +17,6 @@
 			"FluidTYPO3\\FluidTYPO3Gizzle\\": "src/FluidTYPO3/FluidTYPO3Gizzle/"
 		}
 	},
-	"replace": {
-		"typo3/cms-composer-installers": "*"
-	},
 	"require": {
 		"namelesscoder/gizzle": "1.0.*",
 		"namelesscoder/gizzle-git-plugins": "dev-master",
