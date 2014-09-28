@@ -62,8 +62,7 @@ class SiteDeployPlugin implements PluginInterface {
 		$pull = new PullPlugin();
 		$pull->initialize(array(
 			PullPlugin::OPTION_BRANCH => $branchName,
-			PullPlugin::OPTION_DIRECTORY => $repositoryLocalPath,
-			PullPlugin::OPTION_DEPTH => 1
+			PullPlugin::OPTION_DIRECTORY => $repositoryLocalPath
 		));
 		$pull->process($payload);
 	}
