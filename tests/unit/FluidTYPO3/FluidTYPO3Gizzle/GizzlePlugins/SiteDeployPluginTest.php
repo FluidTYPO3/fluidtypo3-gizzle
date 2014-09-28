@@ -19,7 +19,8 @@ class SiteDeployPluginTest extends \PHPUnit_Framework_TestCase {
 		$repository = $this->getMock('NamelessCoder\\Gizzle\\Repository', array('getMasterBranch', 'getName'));
 		$repository->expects($this->once())->method('getMasterBranch')->will($this->returnValue($repositoryMasterBranch));
 		$repository->expects($this->once())->method('getName')->will($this->returnValue($repositoryName));
-		$payload = $this->getMock('NamelessCoder\\Gizzle\\Payload', array('getRef', 'getRepository'), array(), '', FALSE);
+		$payload = $this->getMock('NamelessCoder\\Gizzle\\Payload', array('getRef', 'getRepository', 'getHead'), array(), '', FALSE);
+		$payload->expects($this->once())->method('getHead')->will($this->returnValue(TRUE));
 		$payload->expects($this->once())->method('getRef')->will($this->returnValue('refs/heads/' . $branch));
 		$payload->expects($this->exactly(2))->method('getRepository')->will($this->returnValue($repository));
 		$mock = $this->getMock('FluidTYPO3\\FluidTYPO3Gizzle\\GizzlePlugins\\SiteDeployPlugin', array('getPullPlugin'));
@@ -40,7 +41,9 @@ class SiteDeployPluginTest extends \PHPUnit_Framework_TestCase {
 		$branch = SiteDeployPlugin::OPTION_BRANCH;
 		return array(
 			array('master', 'foobar', 'master', array($monitored => array('foobar'), $branch => 'master'), TRUE),
+			array('master', 'foobar', 'master', array($monitored => array(), $branch => 'master'), FALSE),
 			array('master', 'foobar', 'master', array($monitored => array('foobar'), $branch => 'development'), FALSE),
+			array('development', 'foobar', 'development', array($monitored => array('foobar')), TRUE),
 		);
 	}
 

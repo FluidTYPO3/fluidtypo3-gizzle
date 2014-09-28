@@ -30,7 +30,8 @@ class SiteDeployPlugin extends AbstractPlugin implements PluginInterface {
 		$defaultBranch = $payload->getRepository()->getMasterBranch();
 		$isMonitored = TRUE === in_array($payload->getRepository()->getName(), $monitoredRepositoryNames);
 		$matchesHead = 'refs/heads/' . $this->getSettingValue(self::OPTION_BRANCH, $defaultBranch) === $payload->getRef();
-		return ($matchesHead && $isMonitored);
+		$hasHead = NULL !== $payload->getHead();
+		return ($matchesHead && $isMonitored && $hasHead);
 	}
 
 	/**
