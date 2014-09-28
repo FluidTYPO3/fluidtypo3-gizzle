@@ -40,26 +40,43 @@ class SiteDeployPlugin extends AbstractPlugin implements PluginInterface {
 	 * @return void
 	 */
 	public function process(Payload $payload) {
-		$repositoryRelativePath = sprintf($this->settings[self::OPTION_DIRECTORY], $payload->getRepository()->getName());
-		$repositoryBasePath = $this->getSettingValue(self::OPTION_DOCUMENTROOT, '/');
-		$repositoryLocalPath = $repositoryBasePath . $repositoryRelativePath;
-		$branchName = TRUE === isset($this->settings[self::OPTION_BRANCH]) ? $this->settings[self::OPTION_BRANCH] : $payload->getRepository()->getMasterBranch();
-		// 1) use a Git PullPlugin to pull this repository
-		$pull = new PullPlugin();
-		$pull->initialize(array(
-			PullPlugin::OPTION_BRANCH => $branchName,
-			PullPlugin::OPTION_DIRECTORY => $repositoryLocalPath
-		));
-		$pull->process($payload);
+		$this->pullLocalRepository($payload);
 	}
 
 	/**
-	 * @param string $name
-	 * @param mixed $defaultValue
-	 * @return mixed
+	 * @param Payload $payload
+	 * @return void
 	 */
-	protected function getSettingValue($name, $defaultValue = NULL) {
-		return TRUE === isset($this->settings[$name]) ? $this->settings[$name] : $defaultValue;
+	protected function pullLocalRepository(Payload $payload) {
+		$repositoryLocalPath = $this->getRepositoryPath($payload);
+		$branchName = $this->getSettingValue(self::OPTION_BRANCH, $payload->getRepository()->getMasterBranch());
+
+		// 1) use a Git PullPlugin to pull this repository
+		$this->getPullPlugin(array(
+			PullPlugin::OPTION_BRANCH => $branchName,
+			PullPlugin::OPTION_DIRECTORY => $repositoryLocalPath
+		))->process($payload);
+	}
+
+	/**
+	 * @param array $settings
+	 * @return PullPlugin
+	 */
+	protected function getPullPlugin(array $settings) {
+		$pull = new PullPlugin();
+		$pull->initialize($settings);
+		return $pull;
+	}
+
+	/**
+	 * @param Payload $payload
+	 * @return string
+	 */
+	protected function getRepositoryPath(Payload $payload) {
+		$repositoryRelativePath = sprintf($this->getSettingValue(self::OPTION_DIRECTORY), $payload->getRepository()->getName());
+		$repositoryBasePath = $this->getSettingValue(self::OPTION_DOCUMENTROOT, '/');
+		$repositoryLocalPath = $repositoryBasePath . $repositoryRelativePath;
+		return $repositoryLocalPath;
 	}
 
 }
