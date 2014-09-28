@@ -42,7 +42,8 @@ class SiteDeployPlugin implements PluginInterface {
 	public function trigger(Payload $payload) {
 		$monitoredRepositoryUrls = (array) $this->settings[self::OPTION_MONITORED];
 		$isMonitored = TRUE === in_array($payload->getRepository()->getName(), $monitoredRepositoryUrls);
-		return ('refs/heads/' . $this->settings[self::OPTION_BRANCH] === $payload->getRef() && $isMonitored);
+		$matchesHead = 'refs/heads/' . $this->settings[self::OPTION_BRANCH] === $payload->getRef();
+		return ($matchesHead && $isMonitored);
 	}
 
 	/**
