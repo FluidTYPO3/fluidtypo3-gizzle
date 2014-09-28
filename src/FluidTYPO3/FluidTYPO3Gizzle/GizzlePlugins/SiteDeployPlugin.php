@@ -26,9 +26,10 @@ class SiteDeployPlugin extends AbstractPlugin implements PluginInterface {
 	 * @return boolean
 	 */
 	public function trigger(Payload $payload) {
-		$monitoredRepositoryUrls = (array) $this->settings[self::OPTION_MONITORED];
-		$isMonitored = TRUE === in_array($payload->getRepository()->getName(), $monitoredRepositoryUrls);
-		$matchesHead = 'refs/heads/' . $this->settings[self::OPTION_BRANCH] === $payload->getRef();
+		$monitoredRepositoryNames = (array) $this->getSettingValue(self::OPTION_MONITORED, array());
+		$defaultBranch = $payload->getRepository()->getMasterBranch();
+		$isMonitored = TRUE === in_array($payload->getRepository()->getName(), $monitoredRepositoryNames);
+		$matchesHead = 'refs/heads/' . $this->getSettingValue(self::OPTION_BRANCH, $defaultBranch) === $payload->getRef();
 		return ($matchesHead && $isMonitored);
 	}
 
@@ -48,13 +49,9 @@ class SiteDeployPlugin extends AbstractPlugin implements PluginInterface {
 	 * @return void
 	 */
 	protected function pullLocalRepository(Payload $payload) {
-		$repositoryLocalPath = $this->getRepositoryPath($payload);
-		$branchName = $this->getSettingValue(self::OPTION_BRANCH, $payload->getRepository()->getMasterBranch());
-
-		// 1) use a Git PullPlugin to pull this repository
 		$this->getPullPlugin(array(
-			PullPlugin::OPTION_BRANCH => $branchName,
-			PullPlugin::OPTION_DIRECTORY => $repositoryLocalPath
+			PullPlugin::OPTION_DIRECTORY => $this->getRepositoryPath($payload),
+			PullPlugin::OPTION_BRANCH => $this->getSettingValue(self::OPTION_BRANCH, $payload->getRepository()->getMasterBranch())
 		))->process($payload);
 	}
 
