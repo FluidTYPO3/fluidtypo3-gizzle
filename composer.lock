@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6e0c4db81c85a30f96e4abddb6b97faa",
+    "hash": "c86960606c751cbc3264f0ee85e0b401",
     "packages": [
         {
             "name": "milo/github-api",
@@ -51,16 +51,16 @@
         },
         {
             "name": "namelesscoder/gizzle",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle.git",
-                "reference": "95f200503629e9391f39999098b6ca0e82b2bea6"
+                "reference": "26b8f393c110bd61ed3ef395b21331d4c99cb687"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/95f200503629e9391f39999098b6ca0e82b2bea6",
-                "reference": "95f200503629e9391f39999098b6ca0e82b2bea6",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/26b8f393c110bd61ed3ef395b21331d4c99cb687",
+                "reference": "26b8f393c110bd61ed3ef395b21331d4c99cb687",
                 "shasum": ""
             },
             "require": {
@@ -98,7 +98,7 @@
                 "plugin",
                 "webhook"
             ],
-            "time": "2014-09-28 12:45:54"
+            "time": "2014-09-28 16:02:14"
         },
         {
             "name": "namelesscoder/gizzle-git-plugins",
@@ -106,19 +106,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle-git-plugins.git",
-                "reference": "0948950c7cddeb75b06f2dc87a077dfa0fcfdbbd"
+                "reference": "fb3420557f27b1a59804ac172c752a3d912f59fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/0948950c7cddeb75b06f2dc87a077dfa0fcfdbbd",
-                "reference": "0948950c7cddeb75b06f2dc87a077dfa0fcfdbbd",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/fb3420557f27b1a59804ac172c752a3d912f59fb",
+                "reference": "fb3420557f27b1a59804ac172c752a3d912f59fb",
                 "shasum": ""
             },
             "require": {
                 "namelesscoder/gizzle": "1.0.*"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.3.*"
+                "phpunit/phpunit": "4.3.*",
+                "satooshi/php-coveralls": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -139,7 +140,7 @@
                 }
             ],
             "description": "Gizzle plugins for running Git operations",
-            "time": "2014-09-28 13:02:16"
+            "time": "2014-09-28 15:16:10"
         },
         {
             "name": "namelesscoder/gizzle-typo3-plugins",
