@@ -1,6 +1,7 @@
 <?php
 namespace FluidTYPO3\FluidTYPO3Gizzle\GizzlePlugins;
 
+use NamelessCoder\Gizzle\AbstractPlugin;
 use NamelessCoder\Gizzle\Payload;
 use NamelessCoder\Gizzle\PluginInterface;
 use NamelessCoder\GizzleGitPlugins\GizzlePlugins\PullPlugin;
@@ -8,7 +9,7 @@ use NamelessCoder\GizzleGitPlugins\GizzlePlugins\PullPlugin;
 /**
  * Class SiteDeployPlugin
  */
-class SiteDeployPlugin implements PluginInterface {
+class SiteDeployPlugin extends AbstractPlugin implements PluginInterface {
 
 	const OPTION_MONITORED = 'monitored';
 	const OPTION_BRANCH = 'branch';
@@ -16,21 +17,6 @@ class SiteDeployPlugin implements PluginInterface {
 	const OPTION_DIRECTORY = 'directory';
 	const OPTION_POST_TRUNCATE = 'truncate';
 	const OPTION_POST_DELETE = 'delete';
-
-	/**
-	 * @var array
-	 */
-	protected $settings = array();
-
-	/**
-	 * Initialize the plugin with an array of settings.
-	 *
-	 * @param array $settings
-	 * @return void
-	 */
-	public function initialize(array $settings) {
-		$this->settings = $settings;
-	}
 
 	/**
 	 * Analyse $payload and return TRUE if this plugin should
