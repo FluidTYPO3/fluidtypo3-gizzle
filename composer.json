@@ -21,7 +21,7 @@
 		"typo3/cms-composer-installers": "*"
 	},
 	"require": {
-		"namelesscoder/gizzle": "dev-master",
+		"namelesscoder/gizzle": "1.0.*",
 		"namelesscoder/gizzle-git-plugins": "dev-master",
 		"namelesscoder/gizzle-typo3-plugins": "dev-master"
 	},
