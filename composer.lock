@@ -55,12 +55,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle.git",
-                "reference": "43d055c843d3c0cff643c20e01918400ba7380e0"
+                "reference": "f7f0470f4880403633ac2ed35a8a3671b4d03c39"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/43d055c843d3c0cff643c20e01918400ba7380e0",
-                "reference": "43d055c843d3c0cff643c20e01918400ba7380e0",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/f7f0470f4880403633ac2ed35a8a3671b4d03c39",
+                "reference": "f7f0470f4880403633ac2ed35a8a3671b4d03c39",
                 "shasum": ""
             },
             "require": {
@@ -90,7 +90,7 @@
                 }
             ],
             "description": "GitHub Webhook Listener with plugin-based API for creating your own triggerered actions",
-            "time": "2014-09-28 03:29:44"
+            "time": "2014-09-28 03:32:17"
         },
         {
             "name": "namelesscoder/gizzle-git-plugins",
