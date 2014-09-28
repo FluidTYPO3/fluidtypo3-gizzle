@@ -10,3 +10,6 @@ before_script:
 
 script:
   - ./vendor/phpunit/phpunit/phpunit -c ./tests/phpunit.xml
+
+after_script:
+  - php vendor/bin/cov
