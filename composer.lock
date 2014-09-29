@@ -51,21 +51,21 @@
         },
         {
             "name": "namelesscoder/gizzle",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle.git",
-                "reference": "26b8f393c110bd61ed3ef395b21331d4c99cb687"
+                "reference": "ba8579113a6c28b99cfe4604df35a8e9a2080fbb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/26b8f393c110bd61ed3ef395b21331d4c99cb687",
-                "reference": "26b8f393c110bd61ed3ef395b21331d4c99cb687",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/ba8579113a6c28b99cfe4604df35a8e9a2080fbb",
+                "reference": "ba8579113a6c28b99cfe4604df35a8e9a2080fbb",
                 "shasum": ""
             },
             "require": {
                 "milo/github-api": "~1.2.1",
-                "symfony/yaml": "~2.5.3"
+                "symfony/yaml": "2.5.5"
             },
             "require-dev": {
                 "phpunit/phpunit": "4.3.*",
@@ -98,7 +98,7 @@
                 "plugin",
                 "webhook"
             ],
-            "time": "2014-09-28 16:02:14"
+            "time": "2014-09-29 18:27:26"
         },
         {
             "name": "namelesscoder/gizzle-git-plugins",
@@ -106,12 +106,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle-git-plugins.git",
-                "reference": "fb3420557f27b1a59804ac172c752a3d912f59fb"
+                "reference": "2eed59eea4a31b306dd9dadd1500851f8ee89386"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/fb3420557f27b1a59804ac172c752a3d912f59fb",
-                "reference": "fb3420557f27b1a59804ac172c752a3d912f59fb",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/2eed59eea4a31b306dd9dadd1500851f8ee89386",
+                "reference": "2eed59eea4a31b306dd9dadd1500851f8ee89386",
                 "shasum": ""
             },
             "require": {
@@ -140,7 +140,7 @@
                 }
             ],
             "description": "Gizzle plugins for running Git operations",
-            "time": "2014-09-28 15:16:10"
+            "time": "2014-09-28 23:29:09"
         },
         {
             "name": "namelesscoder/gizzle-typo3-plugins",
@@ -185,7 +185,7 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "2.5.x-dev",
+            "version": "v2.5.5",
             "target-dir": "Symfony/Component/Yaml",
             "source": {
                 "type": "git",
@@ -1247,12 +1247,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "bf53697836343c9bc5663649f5f094ede73c2d5c"
+                "reference": "ea86d91a10c5737a1e043aa29fe05837f942d163"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/bf53697836343c9bc5663649f5f094ede73c2d5c",
-                "reference": "bf53697836343c9bc5663649f5f094ede73c2d5c",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/ea86d91a10c5737a1e043aa29fe05837f942d163",
+                "reference": "ea86d91a10c5737a1e043aa29fe05837f942d163",
                 "shasum": ""
             },
             "require": {
@@ -1261,7 +1261,8 @@
             "require-dev": {
                 "psr/log": "~1.0",
                 "symfony/config": "~2.0",
-                "symfony/dependency-injection": "~2.0",
+                "symfony/dependency-injection": "~2.6",
+                "symfony/expression-language": "~2.6",
                 "symfony/stopwatch": "~2.2"
             },
             "suggest": {
@@ -1295,7 +1296,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2014-09-22 11:59:59"
+            "time": "2014-09-28 16:15:31"
         },
         {
             "name": "symfony/filesystem",
@@ -1351,12 +1352,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Stopwatch.git",
-                "reference": "1514a74517c22a6bbc632bab8755199151af3d63"
+                "reference": "f7cca9c342ce395d2aa17383d0f9a409d81ca585"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Stopwatch/zipball/1514a74517c22a6bbc632bab8755199151af3d63",
-                "reference": "1514a74517c22a6bbc632bab8755199151af3d63",
+                "url": "https://api.github.com/repos/symfony/Stopwatch/zipball/f7cca9c342ce395d2aa17383d0f9a409d81ca585",
+                "reference": "f7cca9c342ce395d2aa17383d0f9a409d81ca585",
                 "shasum": ""
             },
             "require": {
@@ -1389,7 +1390,7 @@
             ],
             "description": "Symfony Stopwatch Component",
             "homepage": "http://symfony.com",
-            "time": "2014-08-14 16:37:29"
+            "time": "2014-09-22 11:59:59"
         }
     ],
     "aliases": [
