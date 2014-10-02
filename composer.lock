@@ -106,12 +106,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle-git-plugins.git",
-                "reference": "2eed59eea4a31b306dd9dadd1500851f8ee89386"
+                "reference": "d69827ac56c10effcce6248ea1ec61126549b02d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/2eed59eea4a31b306dd9dadd1500851f8ee89386",
-                "reference": "2eed59eea4a31b306dd9dadd1500851f8ee89386",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/d69827ac56c10effcce6248ea1ec61126549b02d",
+                "reference": "d69827ac56c10effcce6248ea1ec61126549b02d",
                 "shasum": ""
             },
             "require": {
@@ -140,7 +140,7 @@
                 }
             ],
             "description": "Gizzle plugins for running Git operations",
-            "time": "2014-09-28 23:29:09"
+            "time": "2014-10-02 00:46:30"
         },
         {
             "name": "namelesscoder/gizzle-typo3-plugins",
@@ -148,16 +148,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle-typo3-plugins.git",
-                "reference": "1bf83d9f2a09d360fd51e0edea9f45b05b5ef44d"
+                "reference": "38f2055ca9bb772bc74ff4de12966220e0a67ccb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/1bf83d9f2a09d360fd51e0edea9f45b05b5ef44d",
-                "reference": "1bf83d9f2a09d360fd51e0edea9f45b05b5ef44d",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/38f2055ca9bb772bc74ff4de12966220e0a67ccb",
+                "reference": "38f2055ca9bb772bc74ff4de12966220e0a67ccb",
                 "shasum": ""
             },
             "require": {
-                "namelesscoder/gizzle": "1.0.*"
+                "namelesscoder/gizzle": "1.0.*",
+                "namelesscoder/typo3-repository-client": "dev-master"
             },
             "require-dev": {
                 "phpunit/phpunit": "4.3.*"
@@ -172,7 +173,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "GPLv3"
+                "MIT"
             ],
             "authors": [
                 {
@@ -181,7 +182,46 @@
                 }
             ],
             "description": "Gizzle plugins for running various tasks on repositories which contain TYPO3 extensions",
-            "time": "2014-09-28 13:01:58"
+            "time": "2014-10-02 00:28:09"
+        },
+        {
+            "name": "namelesscoder/typo3-repository-client",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NamelessCoder/typo3-repository-client.git",
+                "reference": "c8869f160b24b4cb8313a099d26baafcf0937cbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NamelessCoder/typo3-repository-client/zipball/c8869f160b24b4cb8313a099d26baafcf0937cbc",
+                "reference": "c8869f160b24b4cb8313a099d26baafcf0937cbc",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.2.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NamelessCoder\\TYPO3RepositoryClient\\Tests\\Fixtures\\": "tests/fixtures/NamelessCoder/TYPO3RepositoryClient/",
+                    "NamelessCoder\\TYPO3RepositoryClient\\Tests\\Unit\\": "tests/unit/NamelessCoder/TYPO3RepositoryClient/",
+                    "NamelessCoder\\TYPO3RepositoryClient\\": "src/NamelessCoder/TYPO3RepositoryClient/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Claus Due",
+                    "email": "claus@namelesscoder.net"
+                }
+            ],
+            "description": "Client for interacting with the official TYPO3 Extension Repository (TER). Contains API and CLI scripts.",
+            "time": "2014-10-01 23:04:17"
         },
         {
             "name": "symfony/yaml",
@@ -1190,12 +1230,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "700dbb7648e89d0c8ce5337a9febc18dc84bcb6e"
+                "reference": "7049924cf0b7f350e5a099ea988e713ebf7590fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/700dbb7648e89d0c8ce5337a9febc18dc84bcb6e",
-                "reference": "700dbb7648e89d0c8ce5337a9febc18dc84bcb6e",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/7049924cf0b7f350e5a099ea988e713ebf7590fe",
+                "reference": "7049924cf0b7f350e5a099ea988e713ebf7590fe",
                 "shasum": ""
             },
             "require": {
@@ -1238,7 +1278,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-09-25 10:18:55"
+            "time": "2014-10-01 05:53:11"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1247,12 +1287,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "ea86d91a10c5737a1e043aa29fe05837f942d163"
+                "reference": "93d237c3da7565a9ad2b4b6a74af73f4e3c0c305"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/ea86d91a10c5737a1e043aa29fe05837f942d163",
-                "reference": "ea86d91a10c5737a1e043aa29fe05837f942d163",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/93d237c3da7565a9ad2b4b6a74af73f4e3c0c305",
+                "reference": "93d237c3da7565a9ad2b4b6a74af73f4e3c0c305",
                 "shasum": ""
             },
             "require": {
@@ -1296,7 +1336,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2014-09-28 16:15:31"
+            "time": "2014-10-01 05:53:11"
         },
         {
             "name": "symfony/filesystem",

@@ -1,0 +1,13 @@
+NamelessCoder\GizzleGitPlugins:
+  NamelessCoder\GizzleGitPlugins\GizzlePlugins\ClonePlugin:
+    enabled: true
+    branch: master
+    single: true
+    depth: 1
+    directory: /tmp/%s
+NamelessCoder\GizzleTYPO3Plugins:
+  NamelessCoder\GizzleTYPO3Plugins\GizzlePlugins\ExtensionRepositoryReleasePlugin:
+    enabled: true
+    branch: master
+    directory: /tmp/%s
+
