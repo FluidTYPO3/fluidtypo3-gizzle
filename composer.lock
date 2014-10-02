@@ -148,20 +148,23 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle-typo3-plugins.git",
-                "reference": "38f2055ca9bb772bc74ff4de12966220e0a67ccb"
+                "reference": "6d8d7bde3625271d361a2ebbf34754c7012f9701"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/38f2055ca9bb772bc74ff4de12966220e0a67ccb",
-                "reference": "38f2055ca9bb772bc74ff4de12966220e0a67ccb",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/6d8d7bde3625271d361a2ebbf34754c7012f9701",
+                "reference": "6d8d7bde3625271d361a2ebbf34754c7012f9701",
                 "shasum": ""
             },
             "require": {
                 "namelesscoder/gizzle": "1.0.*",
+                "namelesscoder/gizzle-git-plugins": "dev-master",
                 "namelesscoder/typo3-repository-client": "dev-master"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.3.*"
+                "mikey179/vfsstream": "~1.3.0",
+                "phpunit/phpunit": "4.3.*",
+                "satooshi/php-coveralls": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -182,7 +185,7 @@
                 }
             ],
             "description": "Gizzle plugins for running various tasks on repositories which contain TYPO3 extensions",
-            "time": "2014-10-02 00:28:09"
+            "time": "2014-10-02 22:05:53"
         },
         {
             "name": "namelesscoder/typo3-repository-client",
@@ -190,12 +193,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/typo3-repository-client.git",
-                "reference": "c8869f160b24b4cb8313a099d26baafcf0937cbc"
+                "reference": "e161d4d5dd68524006589cfe108a8d985d29e1d2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/typo3-repository-client/zipball/c8869f160b24b4cb8313a099d26baafcf0937cbc",
-                "reference": "c8869f160b24b4cb8313a099d26baafcf0937cbc",
+                "url": "https://api.github.com/repos/NamelessCoder/typo3-repository-client/zipball/e161d4d5dd68524006589cfe108a8d985d29e1d2",
+                "reference": "e161d4d5dd68524006589cfe108a8d985d29e1d2",
                 "shasum": ""
             },
             "require-dev": {
@@ -221,7 +224,7 @@
                 }
             ],
             "description": "Client for interacting with the official TYPO3 Extension Repository (TER). Contains API and CLI scripts.",
-            "time": "2014-10-01 23:04:17"
+            "time": "2014-10-02 13:36:57"
         },
         {
             "name": "symfony/yaml",
