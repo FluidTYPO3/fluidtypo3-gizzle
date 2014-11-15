@@ -51,16 +51,16 @@
         },
         {
             "name": "namelesscoder/gizzle",
-            "version": "1.2.0",
+            "version": "1.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle.git",
-                "reference": "755db901e6b7a02c968977f3660cf97f6223a1a5"
+                "reference": "f4333c8cea12557bf9bba74ec7cf90746573bf65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/755db901e6b7a02c968977f3660cf97f6223a1a5",
-                "reference": "755db901e6b7a02c968977f3660cf97f6223a1a5",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/f4333c8cea12557bf9bba74ec7cf90746573bf65",
+                "reference": "f4333c8cea12557bf9bba74ec7cf90746573bf65",
                 "shasum": ""
             },
             "require": {
@@ -98,7 +98,7 @@
                 "plugin",
                 "webhook"
             ],
-            "time": "2014-11-15 19:12:00"
+            "time": "2014-11-15 22:34:22"
         },
         {
             "name": "namelesscoder/gizzle-git-plugins",
