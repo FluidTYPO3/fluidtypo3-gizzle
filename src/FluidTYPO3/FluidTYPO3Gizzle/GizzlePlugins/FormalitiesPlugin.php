@@ -15,6 +15,7 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 	const MESSAGE_NO_SPACE_AFTER_PREFIX = 'Commit message does not contain a space after the prefix (example: "[TASK] Subject header line")';
 	const MESSAGE_INVALIDPREFIX = 'Commit does not start with one of valid prefixes %s';
 	const OPTION_VALIDATE_COMMITS = 'commits';
+	const ACTION_CLOSE = 'close';
 
 	/**
 	 * @var array
@@ -29,7 +30,7 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 	 * @return boolean
 	 */
 	public function trigger(Payload $payload) {
-		return TRUE;
+		return (self::ACTION_CLOSE !== $payload->getAction());
 	}
 
 	/**
