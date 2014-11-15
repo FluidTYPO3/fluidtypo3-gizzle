@@ -18,7 +18,7 @@
 		}
 	},
 	"require": {
-		"namelesscoder/gizzle": "1.1.*",
+		"namelesscoder/gizzle": "1.2.*",
 		"namelesscoder/gizzle-git-plugins": "dev-master",
 		"namelesscoder/gizzle-typo3-plugins": "dev-master"
 	},
