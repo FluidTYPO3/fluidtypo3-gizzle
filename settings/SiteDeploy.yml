@@ -1,9 +1,8 @@
 FluidTYPO3\FluidTYPO3Gizzle:
 
-  # Development Site Deployment
-  # Plugin to monitor repositories for commits to the "development" branch,
-  # deploying (by git pull) when commits are detected to any of the
-  # monitored repositories.
+  # Site Deployment
+  # Plugin to monitor repositories and refresh local repositories
+  # depending on receiving branch.
   FluidTYPO3\FluidTYPO3Gizzle\GizzlePlugins\SiteDeployPlugin:
     monitored:
       - flux
