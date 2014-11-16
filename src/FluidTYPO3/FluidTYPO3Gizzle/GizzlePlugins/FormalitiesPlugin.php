@@ -235,20 +235,6 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 	}
 
 	/**
-	 * @param Payload $payload
-	 * @param Commit $commit
-	 * @return string
-	 */
-	protected function createStatusUpdateUrl(Payload $payload, Commit $commit) {
-		return sprintf(
-			self::URL_STATUS,
-			$payload->getRepository()->getOwner()->getName(),
-			$payload->getRepository()->getName(),
-			$commit->getId()
-		);
-	}
-
-	/**
 	 * @param string $url
 	 * @return string
 	 */
