@@ -15,7 +15,9 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 	const MESSAGE_NO_SPACE_AFTER_PREFIX = 'Commit message does not contain a space after the prefix (example: "[TASK] Subject header line")';
 	const MESSAGE_INVALIDPREFIX = 'Commit does not start with one of valid prefixes %s';
 	const OPTION_VALIDATE_COMMITS = 'commits';
+	const OPTION_CODE_STYLE = 'codeStyle';
 	const ACTION_CLOSE = 'close';
+	const PHP_EXTENSION = 'php';
 
 	/**
 	 * @var array
@@ -39,30 +41,21 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 	 */
 	public function process(Payload $payload) {
 		$hasErrors = FALSE;
-		$payload->getResponse()->addOutputFromPlugin($this, array('Starting pull request validation'));
 		if (TRUE === $this->getSettingValue(self::OPTION_VALIDATE_COMMITS, TRUE)) {
 			$validationResult = $this->validateCommitMessages($payload);
-			$hasErrors = (FALSE === $validationResult || FALSE === $hasErrors);
+			$hasErrors = (TRUE !== $validationResult || TRUE === $hasErrors);
 		}
-		if (TRUE === $hasErrors && TRUE === $this->pullRequestComesFromGithubWebInterface($payload)) {
-			$this->warnAboutErrorsAndPayloadOrigin($payload);
-		} elseif (TRUE === $hasErrors) {
-			$this->warnAboutErrors($payload);
-		} else {
-			$this->reportSuccess($payload);
+		if (TRUE === $this->getSettingValue(self::OPTION_CODE_STYLE, TRUE)) {
+			$validationResult = $this->validateCodeStyleOfPhpFilesInCommits($payload);
+			$hasErrors = (TRUE !== $validationResult || TRUE === $hasErrors);
 		}
-	}
-
-	/**
-	 * @param Payload $payload
-	 * @return void
-	 */
-	protected function reportSuccess(Payload $payload) {
-		$message = '#### This is an automated comment based on an automated formal commit review.';
-		$message .= PHP_EOL . PHP_EOL;
-		$message .= 'We salute you for this 100% standards compliant pull request! On behalf of the whole team, thank you for ';
-		$message .= 'respecting our coding and contribution guidelines!';
-		$this->storePullRequestComment($payload, $message);
+		if (TRUE === $hasErrors) {
+			if (TRUE === $this->pullRequestComesFromGithubWebInterface($payload)) {
+				$this->warnAboutErrorsAndPayloadOrigin($payload);
+			} else {
+				$this->warnAboutErrors($payload);
+			}
+		}
 	}
 
 	/**
@@ -130,12 +123,31 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 	 * @param string $message
 	 * @return void
 	 */
-	protected function markCommitErroneous(Payload $payload, Commit $commit, $message) {
+	protected function storeCommitValidation(Payload $payload, Commit $commit, $message, $file, $line) {
+		$url = $payload->getPullRequest()->getUrlReviewComments();
+		$urlPath = $this->getUrlPathFromUrl($url);
+		$parameters = array(
+			'commit_id' => $commit->getId(),
+			'body' => $message,
+			'path' => $file,
+			'position' => $line
+		);
+		$response = $payload->getApi()->post($urlPath, json_encode($parameters));
+	}
+
+	/**
+	 * @param Payload $payload
+	 * @param Commit $commit
+	 * @param string $message
+	 * @param string $status
+	 * @return void
+	 */
+	protected function markCommit(Payload $payload, Commit $commit, $message, $status = 'failure') {
 		$url = $payload->getPullRequest()->getUrlStatuses();
 		$urlPath = $this->getUrlPathFromUrl($url);
 		$urlPath = preg_replace('/[a-z0-9]{40}/', $commit->getSha1(), $urlPath);
 		$parameters = array(
-			'state' => 'failure',
+			'state' => $status,
 			'description' => $message,
 			'context' => 'namelesscoder/gizzle'
 		);
@@ -152,7 +164,7 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 
 	/**
 	 * @param Payload $payload
-	 * @return void
+	 * @return boolean
 	 */
 	protected function validateCommitMessages(Payload $payload) {
 		$hasErrors = FALSE;
@@ -166,9 +178,9 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 			$commit->setId($commitData['sha']);
 			$commit->setSha1($commitData['sha']);
 			$validationResult = $this->validateCommitMessage($payload, $commit);
-			$hasErrors = (FALSE === $validationResult || FALSE === $hasErrors);
+			$hasErrors = (TRUE !== $validationResult || TRUE === $hasErrors);
 		}
-		return $hasErrors;
+		return (FALSE === $hasErrors);
 	}
 
 	/**
@@ -181,8 +193,10 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 		if (TRUE !== $messageResult) {
 			$payload->getResponse()->addOutputFromPlugin($this, array($messageResult));
 			$this->storeCommitComment($payload, $commit, $messageResult);
-			$this->markCommitErroneous($payload, $commit, $messageResult);
+			$this->markCommit($payload, $commit, $messageResult);
+			return FALSE;
 		}
+		return TRUE;
 	}
 
 	/**
@@ -240,6 +254,94 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 	protected function getUrlPathFromUrl($url) {
 		$urlPath = substr($url, strpos($url, '/', 9));
 		return $urlPath;
+	}
+
+	/**
+	 * @param Payload $payload
+	 * @return boolean
+	 */
+	protected function validateCodeStyleOfPhpFilesInCommits(Payload $payload) {
+		$url = $payload->getPullRequest()->getUrlCommits();
+		$urlPath = $this->getUrlPathFromUrl($url);
+		$response = $payload->getApi()->get($urlPath);
+		$commits = json_decode($response->getContent(), JSON_OBJECT_AS_ARRAY);
+		$hasErrors = FALSE;
+		foreach ($commits as $commitData) {
+			$commitUrl = $commitData['url'];
+			$commitUrlPath = $this->getUrlPathFromUrl($commitUrl);
+			$commitResponse = $payload->getApi()->get($commitUrlPath);
+			$commitData = json_decode($commitResponse->getContent(), JSON_OBJECT_AS_ARRAY);
+			$commit = new Commit($commitData);
+			$commit->setId($commitData['sha']);
+			foreach ($commitData['files'] as $fileData) {
+				$extension = pathinfo($fileData['filename'], PATHINFO_EXTENSION);
+				if (self::PHP_EXTENSION === $extension) {
+					$result = $this->validateCodeStyleOfPhpFile($payload, $commit, $fileData['raw_url'], $fileData['filename']);
+					$hasErrors = (TRUE !== $result || TRUE === $hasErrors);
+				}
+			}
+		}
+		return (FALSE === $hasErrors);
+	}
+
+	/**
+	 * @param Payload $payload
+	 * @param Commit $commit
+	 * @param string $url
+	 * @return boolean
+	 */
+	protected function validateCodeStyleOfPhpFile(Payload $payload, Commit $commit, $url, $path) {
+		$contents = file_get_contents($url);
+		$syntaxCommand = 'php -l';
+		list ($result, $errors) = $this->passStdinToCommand($syntaxCommand, $contents);
+		if (FALSE === empty($errors)) {
+			$errors = trim($errors);
+			$errors = str_replace('parse error in - on line', 'parse error in ' . $path . ' on line', $errors);
+			$this->storeCommitValidation($payload, $commit, $errors, $path, substr($errors, 0, strrpos($errors, ' ')));
+			$this->markCommit($payload, $commit, 'PHP syntax check failed! ' . $errors);
+			return FALSE;
+		}
+		$codeStyleCommand = 'vendor/bin/phpcs --standard=vendor/fluidtypo3/coding-standards/ruleset.xml --report=json';
+		list ($result, $errors) = $this->passStdinToCommand($codeStyleCommand, $contents);
+		if (FALSE === empty($errors)) {
+			$payload->getResponse()->addOutputFromPlugin($this, array('Error running PHPCS: ' . $errors));
+			return FALSE;
+		}
+		$validation = json_decode($result, JSON_OBJECT_AS_ARRAY);
+		$errorsAndWarnings = (integer) $validation['totals']['errors'] + (integer) $validation['totals']['warnings'];
+		if (0 === $errorsAndWarnings) {
+			$this->markCommit($payload, $commit, 'No parsing errors and coding style is valid', 'success');
+			return TRUE;
+		} else {
+			$messages = $validation['files']['STDIN']['messages'];
+			foreach ($messages as $messageData) {
+				$this->storeCommitValidation($payload, $commit, $messageData['message'], $path, $messageData['line']);
+				$this->markCommit($payload, $commit, 'Commit has one or more coding standards violations');
+			}
+			return FALSE;
+		}
+	}
+
+	/**
+	 * @param string $command
+	 * @param string $input
+	 * @return array
+	 */
+	protected function passStdinToCommand($command, $input) {
+		$descriptors = array(
+			array('pipe', 'r'),
+			array('pipe', 'w'),
+			array('pipe', 'w'),
+		);
+		$pipes = array();
+		$proc = proc_open($command, $descriptors, $pipes, GIZZLE_HOME);
+		fwrite($pipes[0], $input);
+		fclose($pipes[0]);
+		$result = stream_get_contents($pipes[1]);
+		$errors = stream_get_contents($pipes[2]);
+		fclose($pipes[1]);
+		fclose($pipes[2]);
+		return array($result, $errors);
 	}
 
 }

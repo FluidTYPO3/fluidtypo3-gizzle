@@ -6,3 +6,4 @@ FluidTYPO3\FluidTYPO3Gizzle:
   # and advises if corrections are required.
   FluidTYPO3\FluidTYPO3Gizzle\GizzlePlugins\FormalitiesPlugin:
     commits: true
+    codeStyle: true
