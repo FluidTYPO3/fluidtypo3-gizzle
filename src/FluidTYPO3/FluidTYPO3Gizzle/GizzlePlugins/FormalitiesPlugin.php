@@ -133,7 +133,7 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 			'path' => $file,
 			'position' => $line
 		);
-		$response = $payload->getApi()->post($urlPath, json_encode($parameters));
+		$payload->getApi()->post($urlPath, json_encode($parameters));
 	}
 
 	/**
