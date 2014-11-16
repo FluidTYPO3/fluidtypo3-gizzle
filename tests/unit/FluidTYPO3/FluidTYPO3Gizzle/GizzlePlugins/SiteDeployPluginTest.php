@@ -1,5 +1,6 @@
 <?php
 namespace FluidTYPO3\FluidTYPO3Gizzle\Tests\Unit\GizzlePlugins;
+
 use FluidTYPO3\FluidTYPO3Gizzle\GizzlePlugins\SiteDeployPlugin;
 
 /**
