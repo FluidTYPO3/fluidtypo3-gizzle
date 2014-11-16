@@ -10,6 +10,12 @@
             "email": "claus@namelesscoder.net"
         }
     ],
+	"repositories": [
+		{
+			"type": "git",
+			"url": "https://github.com/FluidTYPO3/FluidTYPO3-CodingStandards"
+		}
+	],
 	"autoload": {
 		"psr-4": {
 			"FluidTYPO3\\FluidTYPO3Gizzle\\Tests\\Fixtures\\": "tests/fixtures/FluidTYPO3/FluidTYPO3Gizzle/",
@@ -18,6 +24,8 @@
 		}
 	},
 	"require": {
+		"squizlabs/php_codesniffer": "1.*",
+		"fluidtypo3/coding-standards": "dev-master",
 		"namelesscoder/gizzle": "1.2.*",
 		"namelesscoder/gizzle-git-plugins": "dev-master",
 		"namelesscoder/gizzle-typo3-plugins": "dev-master"
