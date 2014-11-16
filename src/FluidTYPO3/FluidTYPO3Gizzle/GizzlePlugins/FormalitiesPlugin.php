@@ -16,6 +16,7 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 	const MESSAGE_INVALIDPREFIX = 'Commit does not start with one of valid prefixes %s';
 	const OPTION_VALIDATE_COMMITS = 'commits';
 	const OPTION_CODE_STYLE = 'codeStyle';
+	const OPTION_CODE_STYLE_RULES = 'codeStyleStandard';
 	const ACTION_CLOSE = 'close';
 	const PHP_EXTENSION = 'php';
 
@@ -301,7 +302,7 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 			$this->markCommit($payload, $commit, 'PHP syntax check failed! ' . $errors);
 			return FALSE;
 		}
-		$codeStyleCommand = 'vendor/bin/phpcs --standard=vendor/fluidtypo3/coding-standards/ruleset.xml --report=json';
+		$codeStyleCommand = 'vendor/bin/phpcs --standard=' . $this->getSettingValue(self::OPTION_CODE_STYLE_RULES) . ' --report=json';
 		list ($result, $errors) = $this->passStdinToCommand($codeStyleCommand, $contents);
 		if (FALSE === empty($errors)) {
 			$payload->getResponse()->addOutputFromPlugin($this, array('Error running PHPCS: ' . $errors));

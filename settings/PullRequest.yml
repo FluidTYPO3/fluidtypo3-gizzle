@@ -7,3 +7,4 @@ FluidTYPO3\FluidTYPO3Gizzle:
   FluidTYPO3\FluidTYPO3Gizzle\GizzlePlugins\FormalitiesPlugin:
     commits: true
     codeStyle: true
+    codeStyleStandard: vendor/fluidtypo3/coding-standards/ruleset.xml
