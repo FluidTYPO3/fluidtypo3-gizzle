@@ -17,7 +17,7 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 	const OPTION_VALIDATE_COMMITS = 'commits';
 	const OPTION_CODE_STYLE = 'codeStyle';
 	const OPTION_CODE_STYLE_RULES = 'codeStyleStandard';
-	const ACTION_CLOSE = 'close';
+	const ACTION_CLOSE = 'closed';
 	const PHP_EXTENSION = 'php';
 
 	/**
