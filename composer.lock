@@ -160,12 +160,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle-typo3-plugins.git",
-                "reference": "39dcf62d4fe50435ae605f319b1c50d902c693e1"
+                "reference": "90f96c170005b4c7f52515466ede743e0d863036"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/39dcf62d4fe50435ae605f319b1c50d902c693e1",
-                "reference": "39dcf62d4fe50435ae605f319b1c50d902c693e1",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/90f96c170005b4c7f52515466ede743e0d863036",
+                "reference": "90f96c170005b4c7f52515466ede743e0d863036",
                 "shasum": ""
             },
             "require": {
@@ -197,7 +197,7 @@
                 }
             ],
             "description": "Gizzle plugins for running various tasks on repositories which contain TYPO3 extensions",
-            "time": "2014-11-15 22:46:07"
+            "time": "2014-11-23 13:06:25"
         },
         {
             "name": "namelesscoder/typo3-repository-client",
@@ -205,12 +205,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/typo3-repository-client.git",
-                "reference": "494d28c618a354b3f16ffaf3720f77c8e168f384"
+                "reference": "a69e34f6b6d4d6285eeb90da764bc1d6bbf8eac0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/typo3-repository-client/zipball/494d28c618a354b3f16ffaf3720f77c8e168f384",
-                "reference": "494d28c618a354b3f16ffaf3720f77c8e168f384",
+                "url": "https://api.github.com/repos/NamelessCoder/typo3-repository-client/zipball/a69e34f6b6d4d6285eeb90da764bc1d6bbf8eac0",
+                "reference": "a69e34f6b6d4d6285eeb90da764bc1d6bbf8eac0",
                 "shasum": ""
             },
             "require-dev": {
@@ -237,7 +237,7 @@
                 }
             ],
             "description": "Client for interacting with the official TYPO3 Extension Repository (TER). Contains API and CLI scripts.",
-            "time": "2014-11-15 15:48:35"
+            "time": "2014-11-23 13:07:45"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -762,12 +762,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "5ef44465641e0293fdcdb931f049ee5ef843b985"
+                "reference": "bdf36a58fa6b077cee98dfac52afdade588f7fcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/5ef44465641e0293fdcdb931f049ee5ef843b985",
-                "reference": "5ef44465641e0293fdcdb931f049ee5ef843b985",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/bdf36a58fa6b077cee98dfac52afdade588f7fcc",
+                "reference": "bdf36a58fa6b077cee98dfac52afdade588f7fcc",
                 "shasum": ""
             },
             "require": {
@@ -828,7 +828,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2014-11-12 13:08:40"
+            "time": "2014-11-22 10:30:35"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -1004,12 +1004,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/comparator.git",
-                "reference": "6f67d2ae044ba17ba30573941f4ac96c4777be97"
+                "reference": "c484a80f97573ab934e37826dba0135a3301b26a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/6f67d2ae044ba17ba30573941f4ac96c4777be97",
-                "reference": "6f67d2ae044ba17ba30573941f4ac96c4777be97",
+                "url": "https://api.github.com/repos/sebastianbergmann/comparator/zipball/c484a80f97573ab934e37826dba0135a3301b26a",
+                "reference": "c484a80f97573ab934e37826dba0135a3301b26a",
                 "shasum": ""
             },
             "require": {
@@ -1060,7 +1060,7 @@
                 "compare",
                 "equality"
             ],
-            "time": "2014-10-21 10:04:18"
+            "time": "2014-11-16 21:32:38"
         },
         {
             "name": "sebastian/diff",
@@ -1068,12 +1068,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/diff.git",
-                "reference": "3e22c89be2e1cddf7db89699cb23a9159df12e0c"
+                "reference": "f38057b48125c2b421361da224a8aa800d70aeca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/3e22c89be2e1cddf7db89699cb23a9159df12e0c",
-                "reference": "3e22c89be2e1cddf7db89699cb23a9159df12e0c",
+                "url": "https://api.github.com/repos/sebastianbergmann/diff/zipball/f38057b48125c2b421361da224a8aa800d70aeca",
+                "reference": "f38057b48125c2b421361da224a8aa800d70aeca",
                 "shasum": ""
             },
             "require": {
@@ -1112,7 +1112,7 @@
             "keywords": [
                 "diff"
             ],
-            "time": "2014-11-05 15:28:21"
+            "time": "2014-11-22 06:25:40"
         },
         {
             "name": "sebastian/environment",
@@ -1271,12 +1271,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Config.git",
-                "reference": "6c002c8d18eb2b6514ed3a7c8548bd1a2aabfc30"
+                "reference": "b0da25866bdd29a9264bd958fa81c833cf1aedb5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Config/zipball/6c002c8d18eb2b6514ed3a7c8548bd1a2aabfc30",
-                "reference": "6c002c8d18eb2b6514ed3a7c8548bd1a2aabfc30",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/b0da25866bdd29a9264bd958fa81c833cf1aedb5",
+                "reference": "b0da25866bdd29a9264bd958fa81c833cf1aedb5",
                 "shasum": ""
             },
             "require": {
@@ -1310,7 +1310,7 @@
             ],
             "description": "Symfony Config Component",
             "homepage": "http://symfony.com",
-            "time": "2014-11-11 08:37:22"
+            "time": "2014-11-20 13:24:36"
         },
         {
             "name": "symfony/console",
@@ -1319,12 +1319,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Console.git",
-                "reference": "0f59dca5634f4fe95320ad81a3a7c0997bbc53df"
+                "reference": "84e6129790ce01232729d01603eb17086722e474"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Console/zipball/0f59dca5634f4fe95320ad81a3a7c0997bbc53df",
-                "reference": "0f59dca5634f4fe95320ad81a3a7c0997bbc53df",
+                "url": "https://api.github.com/repos/symfony/Console/zipball/84e6129790ce01232729d01603eb17086722e474",
+                "reference": "84e6129790ce01232729d01603eb17086722e474",
                 "shasum": ""
             },
             "require": {
@@ -1367,7 +1367,7 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "http://symfony.com",
-            "time": "2014-11-11 08:37:22"
+            "time": "2014-11-20 13:24:36"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -1376,12 +1376,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/EventDispatcher.git",
-                "reference": "8e5829263631e686bf4d1254b02411263b8fa228"
+                "reference": "a8d31f90f544e17abae891b3876c2739d8bd6965"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/8e5829263631e686bf4d1254b02411263b8fa228",
-                "reference": "8e5829263631e686bf4d1254b02411263b8fa228",
+                "url": "https://api.github.com/repos/symfony/EventDispatcher/zipball/a8d31f90f544e17abae891b3876c2739d8bd6965",
+                "reference": "a8d31f90f544e17abae891b3876c2739d8bd6965",
                 "shasum": ""
             },
             "require": {
@@ -1425,7 +1425,7 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "http://symfony.com",
-            "time": "2014-11-10 18:00:54"
+            "time": "2014-11-29 12:40:43"
         },
         {
             "name": "symfony/filesystem",
@@ -1434,12 +1434,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/Filesystem.git",
-                "reference": "d369d79337045fdcb2c47d1cacc128367bd18b98"
+                "reference": "f14e640900438d15a26ca296ffec40e4900e7c4b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/d369d79337045fdcb2c47d1cacc128367bd18b98",
-                "reference": "d369d79337045fdcb2c47d1cacc128367bd18b98",
+                "url": "https://api.github.com/repos/symfony/Filesystem/zipball/f14e640900438d15a26ca296ffec40e4900e7c4b",
+                "reference": "f14e640900438d15a26ca296ffec40e4900e7c4b",
                 "shasum": ""
             },
             "require": {
@@ -1472,7 +1472,7 @@
             ],
             "description": "Symfony Filesystem Component",
             "homepage": "http://symfony.com",
-            "time": "2014-11-10 18:00:54"
+            "time": "2014-11-29 12:40:43"
         },
         {
             "name": "symfony/stopwatch",
