@@ -2,7 +2,7 @@
     "name": "fluidtypo3/fluidtypo3-gizzle",
     "description": "Gizzle plugins for running various tasks for the FluidTYPO3 repositories",
     "license": "GPLv3",
-	"version": "0.1.0",
+    "version": "0.1.0",
     "minimum-stability": "dev",
     "authors": [
         {
@@ -10,28 +10,21 @@
             "email": "claus@namelesscoder.net"
         }
     ],
-	"repositories": [
-		{
-			"type": "git",
-			"url": "https://github.com/FluidTYPO3/FluidTYPO3-CodingStandards"
-		}
-	],
-	"autoload": {
-		"psr-4": {
-			"FluidTYPO3\\FluidTYPO3Gizzle\\Tests\\Fixtures\\": "tests/fixtures/FluidTYPO3/FluidTYPO3Gizzle/",
-			"FluidTYPO3\\FluidTYPO3Gizzle\\Tests\\Unit\\": "tests/unit/FluidTYPO3/FluidTYPO3Gizzle/",
-			"FluidTYPO3\\FluidTYPO3Gizzle\\": "src/FluidTYPO3/FluidTYPO3Gizzle/"
-		}
-	},
-	"require": {
-		"squizlabs/php_codesniffer": "1.*",
-		"fluidtypo3/coding-standards": "dev-master",
-		"namelesscoder/gizzle": "1.2.*",
-		"namelesscoder/gizzle-git-plugins": "dev-master",
-		"namelesscoder/gizzle-typo3-plugins": "dev-master"
-	},
-	"require-dev": {
-		"phpunit/phpunit": "4.3.*",
-		"satooshi/php-coveralls": "dev-master"
-	}
+    "autoload": {
+        "psr-4": {
+            "FluidTYPO3\\FluidTYPO3Gizzle\\Tests\\Fixtures\\": "tests/fixtures/FluidTYPO3/FluidTYPO3Gizzle/",
+            "FluidTYPO3\\FluidTYPO3Gizzle\\Tests\\Unit\\": "tests/unit/FluidTYPO3/FluidTYPO3Gizzle/",
+            "FluidTYPO3\\FluidTYPO3Gizzle\\": "src/FluidTYPO3/FluidTYPO3Gizzle/"
+        }
+    },
+    "require": {
+        "squizlabs/php_codesniffer": "1.*",
+        "fluidtypo3/coding-standards": "dev-master",
+        "namelesscoder/gizzle": "@stable",
+        "namelesscoder/gizzle-git-plugins": "dev-master",
+        "namelesscoder/gizzle-typo3-plugins": "@stable"
+    },
+    "require-dev": {
+        "fluidtypo3/development": "*"
+    }
 }
