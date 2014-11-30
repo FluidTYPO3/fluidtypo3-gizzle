@@ -118,20 +118,20 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle-git-plugins.git",
-                "reference": "2c7160a6e8f38161cbf748a6b8be6272fc25901a"
+                "reference": "32e53d0a95a7d0300dddafc45573a49606bfc45d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/2c7160a6e8f38161cbf748a6b8be6272fc25901a",
-                "reference": "2c7160a6e8f38161cbf748a6b8be6272fc25901a",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/32e53d0a95a7d0300dddafc45573a49606bfc45d",
+                "reference": "32e53d0a95a7d0300dddafc45573a49606bfc45d",
                 "shasum": ""
             },
             "require": {
-                "namelesscoder/gizzle": "1.2.*"
+                "namelesscoder/gizzle": "@stable"
             },
             "require-dev": {
-                "phpunit/phpunit": "4.3.*",
-                "satooshi/php-coveralls": "dev-master"
+                "phpunit/phpunit": "@stable",
+                "satooshi/php-coveralls": "@stable"
             },
             "type": "library",
             "autoload": {
@@ -152,7 +152,7 @@
                 }
             ],
             "description": "Gizzle plugins for running Git operations",
-            "time": "2014-11-15 19:16:16"
+            "time": "2014-11-30 23:22:43"
         },
         {
             "name": "namelesscoder/gizzle-typo3-plugins",
@@ -160,12 +160,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle-typo3-plugins.git",
-                "reference": "90f96c170005b4c7f52515466ede743e0d863036"
+                "reference": "69ffdc6e0b105e7fbf69c18b49c5113d18aef705"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/90f96c170005b4c7f52515466ede743e0d863036",
-                "reference": "90f96c170005b4c7f52515466ede743e0d863036",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/69ffdc6e0b105e7fbf69c18b49c5113d18aef705",
+                "reference": "69ffdc6e0b105e7fbf69c18b49c5113d18aef705",
                 "shasum": ""
             },
             "require": {
@@ -197,7 +197,7 @@
                 }
             ],
             "description": "Gizzle plugins for running various tasks on repositories which contain TYPO3 extensions",
-            "time": "2014-11-23 13:06:25"
+            "time": "2014-11-30 23:22:54"
         },
         {
             "name": "namelesscoder/typo3-repository-client",
