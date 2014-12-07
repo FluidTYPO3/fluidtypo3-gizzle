@@ -3,7 +3,6 @@
     "description": "Gizzle plugins for running various tasks for the FluidTYPO3 repositories",
     "license": "GPLv3",
     "version": "0.1.0",
-    "minimum-stability": "dev",
     "authors": [
         {
             "name": "Claus Due",
@@ -19,9 +18,9 @@
     },
     "require": {
         "squizlabs/php_codesniffer": "1.*",
-        "fluidtypo3/coding-standards": "dev-master",
+        "fluidtypo3/coding-standards": "*",
         "namelesscoder/gizzle": "@stable",
-        "namelesscoder/gizzle-git-plugins": "dev-master",
+        "namelesscoder/gizzle-git-plugins": "@stable",
         "namelesscoder/gizzle-typo3-plugins": "@stable"
     },
     "require-dev": {
