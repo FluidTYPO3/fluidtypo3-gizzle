@@ -163,16 +163,16 @@
         },
         {
             "name": "namelesscoder/gizzle-typo3-plugins",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle-typo3-plugins.git",
-                "reference": "7741e15ea9612d386a96dd225780d553bada2772"
+                "reference": "298002ecd56bcbbd9256491062714b632ced5707"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/7741e15ea9612d386a96dd225780d553bada2772",
-                "reference": "7741e15ea9612d386a96dd225780d553bada2772",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/298002ecd56bcbbd9256491062714b632ced5707",
+                "reference": "298002ecd56bcbbd9256491062714b632ced5707",
                 "shasum": ""
             },
             "require": {
@@ -204,7 +204,7 @@
                 }
             ],
             "description": "Gizzle plugins for running various tasks on repositories which contain TYPO3 extensions",
-            "time": "2014-12-07 23:42:30"
+            "time": "2014-12-08 00:11:58"
         },
         {
             "name": "namelesscoder/typo3-repository-client",
