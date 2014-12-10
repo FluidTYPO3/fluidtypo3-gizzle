@@ -50,9 +50,15 @@ cd fluidtypo3-gizzle
 composer install --no-dev
 ```
 
-(if you intend to develop, we suggest removing the `--no-dev` to get phpunit and other utilities installed)
+If you intend to develop, we suggest removing the `--no-dev` to get phpunit and other utilities installed. If installed without `--no-dev` this package will add a new command that you can call once and enable the local development assistant described above:
 
-Then create a virtual host that points to the `web` folder inside the project (find the appropriate instructions for your HTTPD of choice). Optionally you can set the Apache `DirectoryIndex` or corresponding option in another HTTPD to serve the `github-webhook.php` file as default, which lets you shorten your URLs that you use for GitHub web hooks.
+```bash
+./vendor/bin/make
+```
+
+Calling this command *once* is enough - after that, it will automatically be called before each commit you make, triggering code style validation and unit testing.
+
+Lastly, create a virtual host that points to the `web` folder inside the project (find the appropriate instructions for your HTTPD of choice). Optionally you can set the Apache `DirectoryIndex` or corresponding option in another HTTPD to serve the `github-webhook.php` file as default, which lets you shorten your URLs that you use for GitHub web hooks.
 
 ### Preparing credentials
 
