@@ -4,8 +4,283 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "28d59f886993ee5e4cf17938aec55bc7",
+    "hash": "6ce0bbdb493d3c0b392d86977313f6f3",
     "packages": [
+        {
+            "name": "milo/github-api",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/milo/github-api.git",
+                "reference": "7c75181bd025f4361ba2b72df3772a6907c7b53d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/milo/github-api/zipball/7c75181bd025f4361ba2b72df3772a6907c7b53d",
+                "reference": "7c75181bd025f4361ba2b72df3772a6907c7b53d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "nette/tester": "~1.3.0"
+            },
+            "suggest": {
+                "ext-curl": "Allows you to use Http\\CurlClient"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/Github/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Miloslav Hůla",
+                    "email": "miloslav.hula@gmail.com",
+                    "homepage": "https://github.com/milo"
+                }
+            ],
+            "description": "Github API easy access",
+            "time": "2014-11-27 20:00:37"
+        },
+        {
+            "name": "namelesscoder/gizzle",
+            "version": "1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NamelessCoder/gizzle.git",
+                "reference": "9a91dd49586dc8b26af1b51e7af1358569508017"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/9a91dd49586dc8b26af1b51e7af1358569508017",
+                "reference": "9a91dd49586dc8b26af1b51e7af1358569508017",
+                "shasum": ""
+            },
+            "require": {
+                "milo/github-api": "*@stable",
+                "symfony/yaml": "*@stable"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "@stable",
+                "satooshi/php-coveralls": "@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NamelessCoder\\Gizzle\\Tests\\Fixtures\\": "tests/fixtures/NamelessCoder/Gizzle/",
+                    "NamelessCoder\\Gizzle\\Tests\\Unit\\": "tests/unit/NamelessCoder/Gizzle/",
+                    "NamelessCoder\\Gizzle\\": "src/NamelessCoder/Gizzle/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Claus Due",
+                    "email": "claus@namelesscoder.net"
+                }
+            ],
+            "description": "GitHub Webhook Listener with plugin-based API for creating your own triggerered actions",
+            "keywords": [
+                "HOOK",
+                "git",
+                "github",
+                "php",
+                "plugin",
+                "webhook"
+            ],
+            "time": "2014-11-30 23:36:05"
+        },
+        {
+            "name": "namelesscoder/gizzle-git-plugins",
+            "version": "0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NamelessCoder/gizzle-git-plugins.git",
+                "reference": "32e53d0a95a7d0300dddafc45573a49606bfc45d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/32e53d0a95a7d0300dddafc45573a49606bfc45d",
+                "reference": "32e53d0a95a7d0300dddafc45573a49606bfc45d",
+                "shasum": ""
+            },
+            "require": {
+                "namelesscoder/gizzle": "@stable"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "@stable",
+                "satooshi/php-coveralls": "@stable"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NamelessCoder\\GizzleGitPlugins\\Tests\\Fixtures\\": "tests/fixtures/NamelessCoder/GizzleGitPlugins/",
+                    "NamelessCoder\\GizzleGitPlugins\\Tests\\Unit\\": "tests/unit/NamelessCoder/GizzleGitPlugins/",
+                    "NamelessCoder\\GizzleGitPlugins\\": "src/NamelessCoder/GizzleGitPlugins/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv3"
+            ],
+            "authors": [
+                {
+                    "name": "Claus Due",
+                    "email": "claus@namelesscoder.net"
+                }
+            ],
+            "description": "Gizzle plugins for running Git operations",
+            "time": "2014-11-30 23:22:43"
+        },
+        {
+            "name": "namelesscoder/gizzle-typo3-plugins",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NamelessCoder/gizzle-typo3-plugins.git",
+                "reference": "298002ecd56bcbbd9256491062714b632ced5707"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/298002ecd56bcbbd9256491062714b632ced5707",
+                "reference": "298002ecd56bcbbd9256491062714b632ced5707",
+                "shasum": ""
+            },
+            "require": {
+                "namelesscoder/gizzle": "@stable",
+                "namelesscoder/gizzle-git-plugins": "@stable",
+                "namelesscoder/typo3-repository-client": "@stable"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "~1.3.0",
+                "phpunit/phpunit": "4.3.*",
+                "satooshi/php-coveralls": "*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NamelessCoder\\GizzleTYPO3Plugins\\Tests\\Fixtures\\": "tests/fixtures/NamelessCoder/GizzleTYPO3Plugins/",
+                    "NamelessCoder\\GizzleTYPO3Plugins\\Tests\\Unit\\": "tests/unit/NamelessCoder/GizzleTYPO3Plugins/",
+                    "NamelessCoder\\GizzleTYPO3Plugins\\": "src/NamelessCoder/GizzleTYPO3Plugins/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Claus Due",
+                    "email": "claus@namelesscoder.net"
+                }
+            ],
+            "description": "Gizzle plugins for running various tasks on repositories which contain TYPO3 extensions",
+            "time": "2014-12-08 00:11:58"
+        },
+        {
+            "name": "namelesscoder/typo3-repository-client",
+            "version": "1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/NamelessCoder/typo3-repository-client.git",
+                "reference": "65f5827b73ea5a82b0a7c306c5a0dda5095a0e31"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/NamelessCoder/typo3-repository-client/zipball/65f5827b73ea5a82b0a7c306c5a0dda5095a0e31",
+                "reference": "65f5827b73ea5a82b0a7c306c5a0dda5095a0e31",
+                "shasum": ""
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "~1.3.0",
+                "phpunit/phpunit": "4.2.*",
+                "satooshi/php-coveralls": "*"
+            },
+            "bin": [
+                "bin/setversion",
+                "bin/upload",
+                "bin/rmversion"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "NamelessCoder\\TYPO3RepositoryClient\\Tests\\Fixtures\\": "tests/fixtures/NamelessCoder/TYPO3RepositoryClient/",
+                    "NamelessCoder\\TYPO3RepositoryClient\\Tests\\Unit\\": "tests/unit/NamelessCoder/TYPO3RepositoryClient/",
+                    "NamelessCoder\\TYPO3RepositoryClient\\": "src/NamelessCoder/TYPO3RepositoryClient/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Claus Due",
+                    "email": "claus@namelesscoder.net"
+                }
+            ],
+            "description": "Client for interacting with the official TYPO3 Extension Repository (TER). Contains API and CLI scripts.",
+            "time": "2014-12-08 00:41:33"
+        },
+        {
+            "name": "symfony/yaml",
+            "version": "v2.6.1",
+            "target-dir": "Symfony/Component/Yaml",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Yaml.git",
+                "reference": "3346fc090a3eb6b53d408db2903b241af51dcb20"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Yaml/zipball/3346fc090a3eb6b53d408db2903b241af51dcb20",
+                "reference": "3346fc090a3eb6b53d408db2903b241af51dcb20",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.6-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Yaml\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Symfony Yaml Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-12-02 20:19:20"
+        }
+    ],
+    "packages-dev": [
         {
             "name": "doctrine/instantiator",
             "version": "1.0.4",
@@ -260,232 +535,6 @@
             ],
             "homepage": "http://vfs.bovigo.org/",
             "time": "2014-07-21 20:15:54"
-        },
-        {
-            "name": "milo/github-api",
-            "version": "v1.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/milo/github-api.git",
-                "reference": "7c75181bd025f4361ba2b72df3772a6907c7b53d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/milo/github-api/zipball/7c75181bd025f4361ba2b72df3772a6907c7b53d",
-                "reference": "7c75181bd025f4361ba2b72df3772a6907c7b53d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "nette/tester": "~1.3.0"
-            },
-            "suggest": {
-                "ext-curl": "Allows you to use Http\\CurlClient"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/Github/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Miloslav Hůla",
-                    "email": "miloslav.hula@gmail.com",
-                    "homepage": "https://github.com/milo"
-                }
-            ],
-            "description": "Github API easy access",
-            "time": "2014-11-27 20:00:37"
-        },
-        {
-            "name": "namelesscoder/gizzle",
-            "version": "1.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/NamelessCoder/gizzle.git",
-                "reference": "9a91dd49586dc8b26af1b51e7af1358569508017"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/9a91dd49586dc8b26af1b51e7af1358569508017",
-                "reference": "9a91dd49586dc8b26af1b51e7af1358569508017",
-                "shasum": ""
-            },
-            "require": {
-                "milo/github-api": "*@stable",
-                "symfony/yaml": "*@stable"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "@stable",
-                "satooshi/php-coveralls": "@stable"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "NamelessCoder\\Gizzle\\Tests\\Fixtures\\": "tests/fixtures/NamelessCoder/Gizzle/",
-                    "NamelessCoder\\Gizzle\\Tests\\Unit\\": "tests/unit/NamelessCoder/Gizzle/",
-                    "NamelessCoder\\Gizzle\\": "src/NamelessCoder/Gizzle/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Claus Due",
-                    "email": "claus@namelesscoder.net"
-                }
-            ],
-            "description": "GitHub Webhook Listener with plugin-based API for creating your own triggerered actions",
-            "keywords": [
-                "HOOK",
-                "git",
-                "github",
-                "php",
-                "plugin",
-                "webhook"
-            ],
-            "time": "2014-11-30 23:36:05"
-        },
-        {
-            "name": "namelesscoder/gizzle-git-plugins",
-            "version": "0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/NamelessCoder/gizzle-git-plugins.git",
-                "reference": "32e53d0a95a7d0300dddafc45573a49606bfc45d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/32e53d0a95a7d0300dddafc45573a49606bfc45d",
-                "reference": "32e53d0a95a7d0300dddafc45573a49606bfc45d",
-                "shasum": ""
-            },
-            "require": {
-                "namelesscoder/gizzle": "@stable"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "@stable",
-                "satooshi/php-coveralls": "@stable"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "NamelessCoder\\GizzleGitPlugins\\Tests\\Fixtures\\": "tests/fixtures/NamelessCoder/GizzleGitPlugins/",
-                    "NamelessCoder\\GizzleGitPlugins\\Tests\\Unit\\": "tests/unit/NamelessCoder/GizzleGitPlugins/",
-                    "NamelessCoder\\GizzleGitPlugins\\": "src/NamelessCoder/GizzleGitPlugins/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPLv3"
-            ],
-            "authors": [
-                {
-                    "name": "Claus Due",
-                    "email": "claus@namelesscoder.net"
-                }
-            ],
-            "description": "Gizzle plugins for running Git operations",
-            "time": "2014-11-30 23:22:43"
-        },
-        {
-            "name": "namelesscoder/gizzle-typo3-plugins",
-            "version": "1.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/NamelessCoder/gizzle-typo3-plugins.git",
-                "reference": "298002ecd56bcbbd9256491062714b632ced5707"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/298002ecd56bcbbd9256491062714b632ced5707",
-                "reference": "298002ecd56bcbbd9256491062714b632ced5707",
-                "shasum": ""
-            },
-            "require": {
-                "namelesscoder/gizzle": "@stable",
-                "namelesscoder/gizzle-git-plugins": "@stable",
-                "namelesscoder/typo3-repository-client": "@stable"
-            },
-            "require-dev": {
-                "mikey179/vfsstream": "~1.3.0",
-                "phpunit/phpunit": "4.3.*",
-                "satooshi/php-coveralls": "*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "NamelessCoder\\GizzleTYPO3Plugins\\Tests\\Fixtures\\": "tests/fixtures/NamelessCoder/GizzleTYPO3Plugins/",
-                    "NamelessCoder\\GizzleTYPO3Plugins\\Tests\\Unit\\": "tests/unit/NamelessCoder/GizzleTYPO3Plugins/",
-                    "NamelessCoder\\GizzleTYPO3Plugins\\": "src/NamelessCoder/GizzleTYPO3Plugins/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Claus Due",
-                    "email": "claus@namelesscoder.net"
-                }
-            ],
-            "description": "Gizzle plugins for running various tasks on repositories which contain TYPO3 extensions",
-            "time": "2014-12-08 00:11:58"
-        },
-        {
-            "name": "namelesscoder/typo3-repository-client",
-            "version": "1.0.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/NamelessCoder/typo3-repository-client.git",
-                "reference": "65f5827b73ea5a82b0a7c306c5a0dda5095a0e31"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/typo3-repository-client/zipball/65f5827b73ea5a82b0a7c306c5a0dda5095a0e31",
-                "reference": "65f5827b73ea5a82b0a7c306c5a0dda5095a0e31",
-                "shasum": ""
-            },
-            "require-dev": {
-                "mikey179/vfsstream": "~1.3.0",
-                "phpunit/phpunit": "4.2.*",
-                "satooshi/php-coveralls": "*"
-            },
-            "bin": [
-                "bin/setversion",
-                "bin/upload",
-                "bin/rmversion"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "NamelessCoder\\TYPO3RepositoryClient\\Tests\\Fixtures\\": "tests/fixtures/NamelessCoder/TYPO3RepositoryClient/",
-                    "NamelessCoder\\TYPO3RepositoryClient\\Tests\\Unit\\": "tests/unit/NamelessCoder/TYPO3RepositoryClient/",
-                    "NamelessCoder\\TYPO3RepositoryClient\\": "src/NamelessCoder/TYPO3RepositoryClient/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Claus Due",
-                    "email": "claus@namelesscoder.net"
-                }
-            ],
-            "description": "Client for interacting with the official TYPO3 Extension Repository (TER). Contains API and CLI scripts.",
-            "time": "2014-12-08 00:41:33"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -1564,56 +1613,8 @@
             "description": "Symfony Stopwatch Component",
             "homepage": "http://symfony.com",
             "time": "2014-12-02 20:19:20"
-        },
-        {
-            "name": "symfony/yaml",
-            "version": "v2.6.1",
-            "target-dir": "Symfony/Component/Yaml",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/Yaml.git",
-                "reference": "3346fc090a3eb6b53d408db2903b241af51dcb20"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/Yaml/zipball/3346fc090a3eb6b53d408db2903b241af51dcb20",
-                "reference": "3346fc090a3eb6b53d408db2903b241af51dcb20",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.6-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Symfony\\Component\\Yaml\\": ""
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
-                    "name": "Fabien Potencier",
-                    "email": "fabien@symfony.com"
-                }
-            ],
-            "description": "Symfony Yaml Component",
-            "homepage": "http://symfony.com",
-            "time": "2014-12-02 20:19:20"
         }
     ],
-    "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
