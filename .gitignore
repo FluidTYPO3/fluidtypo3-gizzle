@@ -2,3 +2,4 @@ vendor
 .idea
 .secret
 .typo3credentials
+.token
