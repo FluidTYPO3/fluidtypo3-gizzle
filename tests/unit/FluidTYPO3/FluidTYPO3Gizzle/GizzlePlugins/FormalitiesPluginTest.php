@@ -55,7 +55,8 @@ class FormalitiesPluginTest extends \PHPUnit_Framework_TestCase {
 		$plugin = new FormalitiesPlugin();
 		$method = new \ReflectionMethod($plugin, 'pullRequestComesFromGithubWebInterface');
 		$method->setAccessible(TRUE);
-		$method->invokeArgs($plugin, array($payload));
+		$result = $method->invokeArgs($plugin, array($payload));
+		$this->assertEquals($expectation, $result);
 	}
 
 	/**
@@ -65,7 +66,7 @@ class FormalitiesPluginTest extends \PHPUnit_Framework_TestCase {
 		return array(
 			array('development', FALSE),
 			array('staging', FALSE),
-			array('patch-abc', FALSE),
+			array('patch-abc', TRUE),
 			array('patch-123', TRUE),
 			array('patch-1', TRUE)
 		);
