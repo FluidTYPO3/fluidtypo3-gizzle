@@ -17,8 +17,7 @@
         }
     },
     "require": {
-        "squizlabs/php_codesniffer": "1.*",
-        "fluidtypo3/coding-standards": "*",
+        "fluidtypo3/development": "*",
         "namelesscoder/gizzle": "@stable",
         "namelesscoder/gizzle-git-plugins": "@stable",
         "namelesscoder/gizzle-typo3-plugins": "@stable"
