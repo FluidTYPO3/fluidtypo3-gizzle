@@ -1,5 +1,6 @@
 NamelessCoder\GizzleTYPO3Plugins:
   NamelessCoder\GizzleTYPO3Plugins\GizzlePlugins\ExtensionRepositoryReleasePlugin:
     enabled: true
+    comment: Automatic release built from GitHub. See the CHANGELOG.md file that is shipped with this release for details.
     directory: /tmp/
 
