@@ -11,9 +11,13 @@
     ],
     "autoload": {
         "psr-4": {
-            "FluidTYPO3\\FluidTYPO3Gizzle\\Tests\\Fixtures\\": "tests/fixtures/FluidTYPO3/FluidTYPO3Gizzle/",
-            "FluidTYPO3\\FluidTYPO3Gizzle\\Tests\\Unit\\": "tests/unit/FluidTYPO3/FluidTYPO3Gizzle/",
             "FluidTYPO3\\FluidTYPO3Gizzle\\": "src/FluidTYPO3/FluidTYPO3Gizzle/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "FluidTYPO3\\FluidTYPO3Gizzle\\Tests\\Fixtures\\": "tests/fixtures/FluidTYPO3/FluidTYPO3Gizzle/",
+            "FluidTYPO3\\FluidTYPO3Gizzle\\Tests\\Unit\\": "tests/unit/FluidTYPO3/FluidTYPO3Gizzle/"
         }
     },
     "require": {
@@ -23,5 +27,11 @@
     },
     "require-dev": {
         "fluidtypo3/development": "*"
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/TYPO3/TYPO3.CMS"
+        }
+    ]
 }
