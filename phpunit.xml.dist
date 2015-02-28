@@ -10,7 +10,6 @@
          stopOnFailure="false"
          stopOnIncomplete="false"
          stopOnSkipped="false"
-         strict="false"
          verbose="false">
     <testsuites>
         <testsuite name="gizzle">
@@ -21,7 +20,7 @@
         <whitelist>
             <addUncoveredFilesFromWhitelist>true</addUncoveredFilesFromWhitelist>
             <processUncoveredFilesFromWhitelist>true</processUncoveredFilesFromWhitelist>
-            <directory>src/FluidTYPO3/FluidTYPO3Gizzle</directory>
+            <directory>src</directory>
         </whitelist>
     </filter>
 </phpunit>
