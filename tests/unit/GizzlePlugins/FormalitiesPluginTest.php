@@ -128,6 +128,40 @@ class FormalitiesPluginTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	/**
+	 * @param string $message
+	 * @param string|boolean $expected
+	 * @dataProvider getCommitMessageContainsValidPrefixTestValues
+	 */
+	public function testCommitMessageContainsValidPrefix($message, $expected) {
+		$plugin = new FormalitiesPlugin();
+		$commit = new Commit();
+		$commit->setMessage($message);
+		$method = new \ReflectionMethod($plugin, 'commitMessageContainsValidPrefix');
+		$method->setAccessible(TRUE);
+		$result = $method->invokeArgs($plugin, array($commit));
+		$this->assertEquals($expected, $result);
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getCommitMessageContainsValidPrefixTestValues() {
+		$error = 'Commit does not start with one of valid prefixes [BUGFIX], [FEATURE], [TASK], [DOC], [TER]';
+		$versalError = 'Commit message uses a lowercase starting letter after the prefix, please use a versal (example: "[TASK] This subject is valid")';
+		return array(
+			array('Merge branch ...', TRUE),
+			array('Merge pull request ...', TRUE),
+			array('Do something to xyz ...', $error),
+			array('[INVALID] Do something to xyz ...', $error),
+			array('[TASK] do something to xyz ...', FormalitiesPlugin::MESSAGE_LOWERCASE_SUBJECT_START),
+			array('[TASK]missingspace...', FormalitiesPlugin::MESSAGE_NO_SPACE_AFTER_PREFIX),
+			array('[TASK]Missingspace...', FormalitiesPlugin::MESSAGE_NO_SPACE_AFTER_PREFIX),
+			array('[TASK] Correct syntax', TRUE),
+			array('[BUGFIX] Correct syntax', TRUE),
+		);
+	}
+
+	/**
 	 * @param array $methods
 	 * @return Payload
 	 */

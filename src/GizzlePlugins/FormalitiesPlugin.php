@@ -190,7 +190,7 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 	 * @return boolean
 	 */
 	protected function validateCommitMessage(Payload $payload, Commit $commit) {
-		$messageResult = $this->commitMessageContainsValidPrefix($payload, $commit);
+		$messageResult = $this->commitMessageContainsValidPrefix($commit);
 		if (TRUE !== $messageResult) {
 			$payload->getResponse()->addOutputFromPlugin($this, array($messageResult));
 			$this->storeCommitComment($payload, $commit, $messageResult);
@@ -201,11 +201,10 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 	}
 
 	/**
-	 * @param Payload $payload
 	 * @param Commit $commit
 	 * @return string|boolean
 	 */
-	protected function commitMessageContainsValidPrefix(Payload $payload, Commit $commit) {
+	protected function commitMessageContainsValidPrefix(Commit $commit) {
 		$body = trim($commit->getMessage());
 		if (0 === strpos($body, 'Merge pull request') || 0 === strpos($body, 'Merge branch')) {
 			return TRUE;
