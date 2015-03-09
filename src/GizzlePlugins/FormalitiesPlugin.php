@@ -5,6 +5,7 @@ use NamelessCoder\Gizzle\AbstractPlugin;
 use NamelessCoder\Gizzle\Commit;
 use NamelessCoder\Gizzle\Payload;
 use NamelessCoder\Gizzle\PluginInterface;
+use NamelessCoder\Gizzle\PullRequest;
 
 /**
  * Class FormalitiesPlugin
@@ -73,7 +74,7 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 		$message .= PHP_EOL . PHP_EOL;
 		$message .= 'Comments have been assigned to each commit in your pull request - please review and adjust. Feel free to ask ';
 		$message .= 'for help if you need it!';
-		$this->storePullRequestComment($payload, $message);
+		$payload->storePullRequestComment($payload->getPullRequest(), $message);
 	}
 
 	/**
@@ -85,55 +86,7 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 		$message .= PHP_EOL . PHP_EOL;
 		$message .= 'Your pull request contains formal errors. Comments have been assigned to each commit in your pull request - ';
 		$message .= 'please review and adjust. Feel free to ask for help if you need it!';
-		$this->storePullRequestComment($payload, $message);
-	}
-
-	/**
-	 * @param Payload $payload
-	 * @param string $message
-	 * @return void
-	 */
-	protected function storePullRequestComment(Payload $payload, $message) {
-		$url = $payload->getPullRequest()->getUrlComments();
-		$urlPath = $this->getUrlPathFromUrl($url);
-		$parameters = array(
-			'body' => $message,
-		);
-		$payload->getApi()->post($urlPath, json_encode($parameters));
-	}
-
-	/**
-	 * @param Payload $payload
-	 * @param Commit $commit
-	 * @param string $message
-	 * @return void
-	 */
-	protected function storeCommitComment(Payload $payload, Commit $commit, $message) {
-		$url = $commit->getUrl();
-		$urlPath = $this->getUrlPathFromUrl($url);
-		$parameters = array(
-			'sha1' => $commit->getSha1(),
-			'body' => $message
-		);
-		$payload->getApi()->post($urlPath, json_encode($parameters));
-	}
-
-	/**
-	 * @param Payload $payload
-	 * @param Commit $commit
-	 * @param string $message
-	 * @return void
-	 */
-	protected function storeCommitValidation(Payload $payload, Commit $commit, $message, $file, $line) {
-		$url = $payload->getPullRequest()->getUrlReviewComments();
-		$urlPath = $this->getUrlPathFromUrl($url);
-		$parameters = array(
-			'commit_id' => $commit->getId(),
-			'body' => $message,
-			'path' => $file,
-			'position' => $line
-		);
-		$payload->getApi()->post($urlPath, json_encode($parameters));
+		$payload->storePullRequestComment($payload->getPullRequest(), $message);
 	}
 
 	/**
@@ -144,15 +97,14 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 	 * @return void
 	 */
 	protected function markCommit(Payload $payload, Commit $commit, $message, $status = 'failure') {
-		$url = $payload->getPullRequest()->getUrlStatuses();
-		$urlPath = $this->getUrlPathFromUrl($url);
-		$urlPath = preg_replace('/[a-z0-9]{40}/', $commit->getSha1(), $urlPath);
+		$url = $payload->getPullRequest()->resolveApiUrl(PullRequest::API_URL_STATUSES);
+		$url = preg_replace('/[a-z0-9]{40}/', $commit->getSha1(), $url);
 		$parameters = array(
 			'state' => $status,
 			'description' => $message,
 			'context' => 'namelesscoder/gizzle'
 		);
-		$payload->getApi()->post($urlPath, json_encode($parameters));
+		$payload->getApi()->post($url, json_encode($parameters));
 	}
 
 	/**
@@ -169,9 +121,8 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 	 */
 	protected function validateCommitMessages(Payload $payload) {
 		$hasErrors = FALSE;
-		$url = $payload->getPullRequest()->getUrlCommits();
-		$urlPath = $this->getUrlPathFromUrl($url);
-		$response = $payload->getApi()->get($urlPath);
+		$url = $payload->getPullRequest()->resolveApiUrl(PullRequest::API_URL_COMMITS);
+		$response = $payload->getApi()->get($url);
 		$commits = json_decode($response->getContent(), JSON_OBJECT_AS_ARRAY);
 		foreach ($commits as $commitData) {
 			$commit = new Commit($commitData['commit']);
@@ -193,7 +144,7 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 		$messageResult = $this->commitMessageContainsValidPrefix($commit);
 		if (TRUE !== $messageResult) {
 			$payload->getResponse()->addOutputFromPlugin($this, array($messageResult));
-			$this->storeCommitComment($payload, $commit, $messageResult);
+			$payload->storeCommitComment($commit, $messageResult);
 			$this->markCommit($payload, $commit, $messageResult);
 			return FALSE;
 		}
@@ -247,15 +198,13 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 	 * @return boolean
 	 */
 	protected function validateCodeStyleOfPhpFilesInCommits(Payload $payload) {
-		$url = $payload->getPullRequest()->getUrlCommits();
-		$urlPath = $this->getUrlPathFromUrl($url);
-		$response = $payload->getApi()->get($urlPath);
+		$url = $payload->getPullRequest()->resolveApiUrl(PullRequest::API_URL_COMMITS);
+		$response = $payload->getApi()->get($url);
 		$commits = json_decode($response->getContent(), JSON_OBJECT_AS_ARRAY);
 		$hasErrors = FALSE;
 		foreach ($commits as $commitData) {
 			$commitUrl = $commitData['url'];
-			$commitUrlPath = $this->getUrlPathFromUrl($commitUrl);
-			$commitResponse = $payload->getApi()->get($commitUrlPath);
+			$commitResponse = $payload->getApi()->get($commitUrl);
 			$commitData = json_decode($commitResponse->getContent(), JSON_OBJECT_AS_ARRAY);
 			$commit = new Commit($commitData);
 			$commit->setId($commitData['sha']);
@@ -283,7 +232,7 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 		if (FALSE === empty($errors)) {
 			$errors = trim($errors);
 			$errors = str_replace('parse error in - on line', 'parse error in ' . $path . ' on line', $errors);
-			$this->storeCommitValidation($payload, $commit, $errors, $path, substr($errors, 0, strrpos($errors, ' ')));
+			$payload->storeCommitValidation($payload->getPullRequest(), $commit, $errors, $path, substr($errors, 0, strrpos($errors, ' ')));
 			$this->markCommit($payload, $commit, 'PHP syntax check failed! ' . $errors);
 			return FALSE;
 		}
@@ -301,7 +250,7 @@ class FormalitiesPlugin extends AbstractPlugin implements PluginInterface {
 		} else {
 			$messages = $validation['files']['STDIN']['messages'];
 			foreach ($messages as $messageData) {
-				$this->storeCommitValidation($payload, $commit, $messageData['message'], $path, $messageData['line']);
+				$payload->storeCommitValidation($payload->getPullRequest(), $commit, $messageData['message'], $path, $messageData['line']);
 				$this->markCommit($payload, $commit, 'Commit has one or more coding standards violations');
 			}
 			return FALSE;

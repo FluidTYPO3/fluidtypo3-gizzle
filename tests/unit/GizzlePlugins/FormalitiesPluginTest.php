@@ -5,6 +5,7 @@ use FluidTYPO3\FluidTYPO3Gizzle\GizzlePlugins\FormalitiesPlugin;
 use Milo\Github\Http\Response;
 use NamelessCoder\Gizzle\Commit;
 use NamelessCoder\Gizzle\Payload;
+use NamelessCoder\Gizzle\PullRequest;
 
 /**
  * Class FormalitiesPluginTest
@@ -25,18 +26,18 @@ class FormalitiesPluginTest extends \PHPUnit_Framework_TestCase {
 	}
 
 	public function testWarnAboutErrorsAndPayloadOrigin() {
-		$payload = $this->getDummyPayload();
-		$plugin = $this->getMock('FluidTYPO3\\FluidTYPO3Gizzle\\GizzlePlugins\\FormalitiesPlugin', array('storePullRequestComment'));
-		$plugin->expects($this->once())->method('storePullRequestComment');
+		$payload = $this->getDummyPayload(array('storePullRequestComment'));
+		$payload->expects($this->once())->method('storePullRequestComment');
+		$plugin = new FormalitiesPlugin();
 		$method = new \ReflectionMethod($plugin, 'warnAboutErrorsAndPayloadOrigin');
 		$method->setAccessible(TRUE);
 		$method->invokeArgs($plugin, array($payload));
 	}
 
 	public function testWarnAboutErrors() {
-		$payload = $this->getDummyPayload();
-		$plugin = $this->getMock('FluidTYPO3\\FluidTYPO3Gizzle\\GizzlePlugins\\FormalitiesPlugin', array('storePullRequestComment'));
-		$plugin->expects($this->once())->method('storePullRequestComment');
+		$payload = $this->getDummyPayload(array('storePullRequestComment'));
+		$payload->expects($this->once())->method('storePullRequestComment');
+		$plugin = new FormalitiesPlugin();
 		$method = new \ReflectionMethod($plugin, 'warnAboutErrors');
 		$method->setAccessible(TRUE);
 		$method->invokeArgs($plugin, array($payload));
@@ -76,7 +77,7 @@ class FormalitiesPluginTest extends \PHPUnit_Framework_TestCase {
 		$plugin = $this->getMock('FluidTYPO3\\FluidTYPO3Gizzle\\GizzlePlugins\\FormalitiesPlugin', array('validateCodeStyleOfPhpFile'));
 		$plugin->expects($this->once())->method('validateCodeStyleOfPhpFile')->will($this->returnValue(TRUE));
 		$payload = $this->getDummyPayload(array('getResponse'));
-		$payload->getPullRequest()->setUrlCommits('http://demo.demo/demo/demo');
+		$payload->getPullRequest()->setApiUrls(array(PullRequest::API_URL_COMMITS => 'http://demo.demo/demo/demo'));
 		$payload->getResponse()->expects($this->any())->method('addOutputFromPlugin');
 		$json = '[{"url": "http://demo.demo/demo/demo"}]';
 		$jsonCommit = '{"url": "http://demo.demo/demo/demo", "sha": "123", "files": [{"filename": "demo/demo.php", "raw_url": "/dev/null"}]}';
@@ -172,8 +173,8 @@ class FormalitiesPluginTest extends \PHPUnit_Framework_TestCase {
 			$payload->expects($this->once())->method('getResponse')->will($this->returnValue($response));
 
 		}
-		$pullRequest = $this->getMock('NamelessCoder\\Gizzle\\PullRequest', array('getUrlStatuses'));
-		$pullRequest->expects($this->any())->method('getUrlStatuses')->will($this->returnValue('http://demo.demo/demo/demo'));
+		$pullRequest = $this->getMock('NamelessCoder\\Gizzle\\PullRequest', array('resolveApiUrl'));
+		$pullRequest->expects($this->any())->method('resolveApiUrl')->will($this->returnValue('http://demo.demo/demo/demo'));
 		$api = $this->getMock('Milo\\GitHub\\Api', array('get', 'post', 'decode'));
 		$payload->setApi($api);
 		$payload->setPullRequest($pullRequest);

@@ -51,16 +51,16 @@
         },
         {
             "name": "namelesscoder/gizzle",
-            "version": "1.3.2",
+            "version": "1.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle.git",
-                "reference": "e80edc09aa25e4eea913e12d698d47957959c8ab"
+                "reference": "60a9339a5baeb515ec232601fb4724330451e62c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/e80edc09aa25e4eea913e12d698d47957959c8ab",
-                "reference": "e80edc09aa25e4eea913e12d698d47957959c8ab",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle/zipball/60a9339a5baeb515ec232601fb4724330451e62c",
+                "reference": "60a9339a5baeb515ec232601fb4724330451e62c",
                 "shasum": ""
             },
             "require": {
@@ -96,20 +96,20 @@
                 "plugin",
                 "webhook"
             ],
-            "time": "2015-02-28 16:05:12"
+            "time": "2015-03-08 19:59:23"
         },
         {
             "name": "namelesscoder/gizzle-git-plugins",
-            "version": "0.1.2",
+            "version": "0.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle-git-plugins.git",
-                "reference": "7732b4078ed6d7830a1d8fff0dfcfcbb9aa62dbc"
+                "reference": "ff1c666c1353f7c4349d18e580a6324970e84f6b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/7732b4078ed6d7830a1d8fff0dfcfcbb9aa62dbc",
-                "reference": "7732b4078ed6d7830a1d8fff0dfcfcbb9aa62dbc",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-git-plugins/zipball/ff1c666c1353f7c4349d18e580a6324970e84f6b",
+                "reference": "ff1c666c1353f7c4349d18e580a6324970e84f6b",
                 "shasum": ""
             },
             "require": {
@@ -136,20 +136,20 @@
                 }
             ],
             "description": "Gizzle plugins for running Git operations",
-            "time": "2015-02-28 16:10:06"
+            "time": "2015-03-08 20:08:16"
         },
         {
             "name": "namelesscoder/gizzle-typo3-plugins",
-            "version": "1.1.2",
+            "version": "1.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/gizzle-typo3-plugins.git",
-                "reference": "7f43b45580e0cade68807c3546fc61fd7db6fdc9"
+                "reference": "a542e34d6dd0f90af25a2d00416b8c62057828bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/7f43b45580e0cade68807c3546fc61fd7db6fdc9",
-                "reference": "7f43b45580e0cade68807c3546fc61fd7db6fdc9",
+                "url": "https://api.github.com/repos/NamelessCoder/gizzle-typo3-plugins/zipball/a542e34d6dd0f90af25a2d00416b8c62057828bf",
+                "reference": "a542e34d6dd0f90af25a2d00416b8c62057828bf",
                 "shasum": ""
             },
             "require": {
@@ -179,20 +179,20 @@
                 }
             ],
             "description": "Gizzle plugins for running various tasks on repositories which contain TYPO3 extensions",
-            "time": "2015-02-28 17:41:51"
+            "time": "2015-03-08 20:03:40"
         },
         {
             "name": "namelesscoder/typo3-repository-client",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/NamelessCoder/typo3-repository-client.git",
-                "reference": "d16c300bbaee80b6205ceecfa38b87521891f977"
+                "reference": "f099dc8c6f5a0c899498d8f92a95e0808badb689"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/NamelessCoder/typo3-repository-client/zipball/d16c300bbaee80b6205ceecfa38b87521891f977",
-                "reference": "d16c300bbaee80b6205ceecfa38b87521891f977",
+                "url": "https://api.github.com/repos/NamelessCoder/typo3-repository-client/zipball/f099dc8c6f5a0c899498d8f92a95e0808badb689",
+                "reference": "f099dc8c6f5a0c899498d8f92a95e0808badb689",
                 "shasum": ""
             },
             "require-dev": {
@@ -222,7 +222,7 @@
                 }
             ],
             "description": "Client for interacting with the official TYPO3 Extension Repository (TER). Contains API and CLI scripts.",
-            "time": "2015-03-02 21:34:50"
+            "time": "2015-03-03 20:20:31"
         },
         {
             "name": "symfony/yaml",
@@ -348,16 +348,16 @@
         },
         {
             "name": "fluidtypo3/development",
-            "version": "1.1.9",
+            "version": "1.1.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FluidTYPO3/fluidtypo3-development.git",
-                "reference": "97bdf7fec76386261186a882385ad93c3bd3dcf7"
+                "reference": "cd00d5894b1ddfddfef4b6e4b006ba4b7ce9317c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FluidTYPO3/fluidtypo3-development/zipball/97bdf7fec76386261186a882385ad93c3bd3dcf7",
-                "reference": "97bdf7fec76386261186a882385ad93c3bd3dcf7",
+                "url": "https://api.github.com/repos/FluidTYPO3/fluidtypo3-development/zipball/cd00d5894b1ddfddfef4b6e4b006ba4b7ce9317c",
+                "reference": "cd00d5894b1ddfddfef4b6e4b006ba4b7ce9317c",
                 "shasum": ""
             },
             "require": {
@@ -402,7 +402,7 @@
                 "php",
                 "typo3"
             ],
-            "time": "2015-02-19 15:53:48"
+            "time": "2015-03-06 03:18:16"
         },
         {
             "name": "guzzle/guzzle",
@@ -1380,20 +1380,21 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.2.0",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "b301c98f19414d836fdaa678648745fcca5aeb4f"
+                "reference": "5046b0e01c416fc2b06df961d0673c85bcdc896c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/b301c98f19414d836fdaa678648745fcca5aeb4f",
-                "reference": "b301c98f19414d836fdaa678648745fcca5aeb4f",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/5046b0e01c416fc2b06df961d0673c85bcdc896c",
+                "reference": "5046b0e01c416fc2b06df961d0673c85bcdc896c",
                 "shasum": ""
             },
             "require": {
                 "ext-tokenizer": "*",
+                "ext-xmlwriter": "*",
                 "php": ">=5.1.2"
             },
             "bin": [
@@ -1401,6 +1402,11 @@
                 "scripts/phpcbf"
             ],
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.0.x-dev"
+                }
+            },
             "autoload": {
                 "classmap": [
                     "CodeSniffer.php",
@@ -1444,7 +1450,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2015-01-21 22:44:05"
+            "time": "2015-03-04 02:07:03"
         },
         {
             "name": "symfony/config",
