@@ -3,3 +3,4 @@ vendor
 .secret
 .typo3credentials
 .token
+composer.lock
