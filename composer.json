@@ -26,11 +26,5 @@
     },
     "require-dev": {
         "fluidtypo3/development": "*"
-    },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/TYPO3/TYPO3.CMS"
-        }
-    ]
+    }
 }
